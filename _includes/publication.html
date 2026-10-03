@@ -1,7 +1,8 @@
 {%- assign p = include.pub -%}
+{%- assign title_text = p.title | strip_html -%}
 {%- assign doi = p.doi | remove: "https://doi.org/" | remove: "http://doi.org/" | remove: "https://dx.doi.org/" | remove: "http://dx.doi.org/" | remove: "doi:" | strip -%}
 <li class="pub{% if p.image %} has-image{% endif %}">
-  {% if p.image %}<div class="pub-thumb">{% if doi != "" %}<a href="https://doi.org/{{ doi }}" tabindex="-1">{% endif %}{% include img.html src=p.image alt=p.title %}{% if doi != "" %}</a>{% endif %}</div>{% endif %}
+  {% if p.image %}<div class="pub-thumb">{% if doi != "" %}<a href="https://doi.org/{{ doi }}" tabindex="-1">{% endif %}{% include img.html src=p.image alt=title_text %}{% if doi != "" %}</a>{% endif %}</div>{% endif %}
   <div class="pub-text">
     <p>{% include authors.html authors=p.authors %} ({{ p.year }}).
       {% if doi != "" %}<a class="pub-title" href="https://doi.org/{{ doi }}">{{ p.title | replace: "CO2", "CO₂" }}</a>{% else %}<span class="pub-title">{{ p.title | replace: "CO2", "CO₂" }}</span>{% endif %}.

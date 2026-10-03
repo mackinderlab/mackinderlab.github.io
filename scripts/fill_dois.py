@@ -10,6 +10,7 @@ If Crossref cannot be reached, the build carries on with what is there.
 """
 
 import json
+import re
 import sys
 import urllib.request
 from pathlib import Path
@@ -43,6 +44,18 @@ def format_authors(people):
     return ", ".join(names)
 
 
+def clean_title(title):
+    """Crossref titles can carry JATS markup and line breaks; keep italics, tidy the rest."""
+    if not title:
+        return title
+    t = re.sub(r"\s*<sub>\s*2\s*</sub>\s*", "₂", title)
+    t = re.sub(r"</?(scp|sup|sub|b|span)[^>]*>", "", t)
+    t = re.sub(r"\s+", " ", t).strip()
+    t = re.sub(r"₂ (?=[-‐])", "₂", t)
+    t = re.sub(r"<i>\s*(.*?)\s*</i>", r"<i>\1</i>", t)
+    return t
+
+
 def details_from(msg):
     year = None
     for key in ("published-print", "published-online", "issued", "posted"):
@@ -59,7 +72,7 @@ def details_from(msg):
         details = vol + (f"({issue})" if issue else "") + (f":{page}" if page else "")
     return {
         "details": details,
-        "title": (msg.get("title") or [None])[0],
+        "title": clean_title((msg.get("title") or [None])[0]),
         "authors": format_authors(msg.get("author", [])),
         "journal": journal,
         "year": year,

@@ -1,23 +1,23 @@
 - doi: 10.1093/plphys/kiag607
-  title: 'From seawater to pyrenoid: the molecular architecture of the diatom CO2-concentrating mechanism'
+  title: 'From seawater to pyrenoid: the molecular architecture of the diatom CO₂-concentrating mechanism'
   authors: Shimakawa G, Nam O, Schober AF, Mueller-Cajar O, Mackinder LCM, Matsuda Y
   journal: Plant Physiology
   year: 2026
   details: 201(4):kiag607
 - doi: 10.1111/nph.71373
-  title: "<scp>EPOS1</scp>\n                    is required for normal pyrenoid starch sheath formation and efficiency of the\n                    <scp>\n                      CO\n                      <sub>2</sub>\n                    </scp>\n                    ‐concentrating mechanism in\n                    <i>Chlamydomonas reinhardtii</i>"
+  title: EPOS1 is required for normal pyrenoid starch sheath formation and efficiency of the CO₂‐concentrating mechanism in <i>Chlamydomonas reinhardtii</i>
   authors: Adler L, Lau CS, Esch L, Dao O, Barrett J, Grant S, Yates G, McCormick AJ, Mackinder LCM
   journal: New Phytologist
   year: 2026
   details: 251(5):2518-2531
 - doi: 10.1093/plphys/kiag385
-  title: "A versatile tool for gene editing in the diatom\n                    <i>Thalassiosira pseudonana</i>"
+  title: A versatile tool for gene editing in the diatom <i>Thalassiosira pseudonana</i>
   authors: Nam O, Grouneva I, Mackinder LCM
   journal: Plant Physiology
   year: 2026
 - doi: 10.64898/2026.07.16.738900
-  title: "A spatial atlas of the seaweed CO\n                  <sub>2</sub>\n                  -fixation machinery reveals a unique Rubisco condensation mechanism"
-  authors: Barrett J, Dégut C, Calvo AS, Hodgkinson MR, Derry H, Salter A, Vandelannoote EC, Beveridge R, Bothwell JH, Jacobs TB, Clerck OD, Blaza JN, Plevin MJ, Mackinder LC, Blomme J
+  title: A spatial atlas of the seaweed CO₂-fixation machinery reveals a unique Rubisco condensation mechanism
+  authors: James Barrett, Clément Dégut, Alejandro Sebiani Calvo, Michael R. Hodgkinson, Hannah Derry, Aidan Salter, Emma Coulembier Vandelannoote, Rebecca Beveridge, John H. Bothwell, Thomas B. Jacobs, Olivier De Clerck, James N. Blaza, Michael J. Plevin, Luke C.M. Mackinder, Jonas Blomme
   journal: bioRxiv
   year: 2026
   preprint: true
@@ -28,7 +28,7 @@
   year: 2026
   details: 201(3):kiag405
 - doi: 10.1093/plphys/kiag250
-  title: 'Pyrenoid-based CO2-concentrating mechanisms across diverse lineages: convergent features and their applications for engineering'
+  title: 'Pyrenoid-based CO₂-concentrating mechanisms across diverse lineages: convergent features and their applications for engineering'
   authors: Pritchard JH, Young SNR, Garland H, Mackinder LCM, McCormick AJ
   journal: Plant Physiology
   year: 2026
@@ -70,14 +70,14 @@
   journal: bioRxiv 2025.12.03.692059
   year: 2025
   preprint: true
-  hidden: false
+  hidden: true
 - doi: 10.1101/2025.11.18.689020
   title: LCI9 is required for normal pyrenoid starch sheath formation and efficiency of the CO₂-concentrating mechanism in Chlamydomonas reinhardtii
   authors: Adler L, Lau J, Esch L, Dao O, Barrett J, Grant S, Yates G, McCormick AJ, Mackinder LCM
   journal: bioRxiv 2025.11.18.689020
   year: 2025
   preprint: true
-  hidden: false
+  hidden: true
   image: /assets/images/publications/adler-2025.jpg
 - doi: 10.1038/s41477-025-02126-2
   title: A modular high-throughput approach for advancing synthetic biology in the chloroplast of Chlamydomonas
