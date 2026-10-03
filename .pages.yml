@@ -117,6 +117,7 @@ content:
       fields: [title]
     fields:
       - { name: title, label: Page title, type: string, required: true }
+      - { name: description, label: Search description, type: text, description: "One or two sentences shown under the page title in Google results." }
       - { name: permalink, label: Web address, type: string, description: "e.g. /outreach/ (new pages only; then add it to the Menu)" }
       - { name: notice, label: Highlighted notice, type: string, description: "Optional banner at the top (used on Join us)." }
       - { name: map, label: Show map, type: boolean }
@@ -155,6 +156,18 @@ content:
       - { name: name, label: Event, type: string }
       - { name: url, label: Event link, type: string }
       - { name: who, label: Who is going, type: string }
+
+  - name: positions
+    label: Positions
+    type: file
+    path: _data/positions.yml
+    format: yaml
+    list: true
+    fields:
+      - { name: title, label: Job title, type: string, required: true, description: "e.g. Postdoctoral Research Associate in pyrenoid biology" }
+      - { name: closes, label: Closing date, type: date, required: true, options: { format: yyyy-MM-dd }, description: "The advert disappears from the site the day after this date." }
+      - { name: summary, label: Short description, type: text, description: "A few sentences about the role." }
+      - { name: url, label: Link to the full advert, type: string, description: "e.g. the University of York jobs page for this post." }
 
   - name: funders
     label: Funders

@@ -55,10 +55,18 @@ title: Home
   </aside>
 </div>
 
-<section class="join-band">
+{% include open-positions.html %}
+<section class="join-band{% if open_positions.size > 0 %} hiring{% endif %}">
   <div>
+    {%- if open_positions.size > 0 %}
+    <h2>We're hiring</h2>
+    <ul class="hiring-list">
+      {%- for job in open_positions %}<li>{{ job.title }} <span class="muted">(closes {{ job.closes | date: "%-d %b %Y" }})</span></li>{% endfor %}
+    </ul>
+    {%- else %}
     <h2>Join us</h2>
     <p>We are always interested in hearing from talented people who share a passion for our research.</p>
+    {%- endif %}
   </div>
-  <a class="button" href="{{ '/join/' | relative_url }}">Opportunities</a>
+  <a class="button" href="{{ '/join/' | relative_url }}{% if open_positions.size > 0 %}#positions{% endif %}">{% if open_positions.size > 0 %}See open positions{% else %}Opportunities{% endif %}</a>
 </section>

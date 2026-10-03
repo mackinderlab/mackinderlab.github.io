@@ -1,0 +1,9 @@
+---
+title: Page not found
+permalink: /404.html
+sitemap: false
+---
+<p>Sorry, that page doesn't exist. It may have moved when the lab website was rebuilt.</p>
+<ul>
+  {% for item in site.data.navigation %}<li><a href="{{ item.url | relative_url }}">{{ item.title }}</a></li>{% endfor %}
+</ul>

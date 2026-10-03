@@ -1,9 +1,18 @@
 title: Mackinder Lab
+tagline: Algal carbon fixation, University of York
 description: >-
-  Systems and synthetic biology of algal carbon fixation, at the University of York.
-url: "" # set to the custom domain once registered, e.g. https://www.mackinderlab.org
+  The Mackinder Lab at the University of York, led by Luke Mackinder, studies how algae
+  concentrate CO2 to fix carbon, using systems and synthetic biology.
+url: https://mackinderlab.github.io
+og_image: /assets/images/og-image.jpg
+# Paste the code from Google Search Console here to verify the site (HTML tag method).
+google_site_verification: ""
 baseurl: ""
 email: luke.mackinder@york.ac.uk
+
+plugins:
+  - jekyll-sitemap
+  - jekyll-redirect-from
 
 collections:
   people:

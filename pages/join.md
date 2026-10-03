@@ -1,7 +1,7 @@
 ---
 title: Join us
 permalink: /join/
-notice: We will be hiring Postdocs, PhD students and technicians from September 2026.
+description: PhD, postdoc and fellowship opportunities in the Mackinder Lab at the University of York, and how to apply.
 ---
 
 Please email [Luke](mailto:luke.mackinder@york.ac.uk) a cover letter describing your research interests, your CV, and contact information for three referees.

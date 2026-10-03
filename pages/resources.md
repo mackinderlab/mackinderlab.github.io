@@ -1,6 +1,7 @@
 ---
 title: CyanoTag resources
 permalink: /resources/
+description: CyanoTag methods, data and plasmid resources for high-throughput fluorescent protein tagging in Synechococcus elongatus PCC 7942.
 ---
 
 **Data and methods for high-throughput protein tagging in *Synechococcus elongatus* PCC 7942.**

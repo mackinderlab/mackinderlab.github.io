@@ -1,0 +1,8 @@
+{%- comment -%} Sets `open_positions` to adverts whose closing date is today or later. {%- endcomment -%}
+{%- assign today = site.time | date: "%Y-%m-%d" -%}
+{%- assign open_positions = "" | split: "" -%}
+{%- for job in site.data.positions -%}
+  {%- assign closes = job.closes | date: "%Y-%m-%d" -%}
+  {%- if job.title and closes >= today -%}{%- assign open_positions = open_positions | push: job -%}{%- endif -%}
+{%- endfor -%}
+{%- assign open_positions = open_positions | sort: "closes" -%}

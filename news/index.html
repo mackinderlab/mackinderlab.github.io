@@ -2,6 +2,7 @@
 title: News
 wide: true
 permalink: /news/
+description: News from the Mackinder Lab at the University of York, including papers, awards, conferences and lab events.
 ---
 {% assign by_year = site.posts | group_by_exp: "p", "p.date | date: '%Y'" %}
 {% for y in by_year %}

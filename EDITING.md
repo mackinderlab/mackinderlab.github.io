@@ -47,6 +47,18 @@ it. The text box works like a simple word processor: headings, bold, links,
 lists and pictures. To caption a picture, put the caption in *italics* on the
 line straight after the picture.
 
+**Advertise a job.** Go to *Positions* and add an entry with the job title,
+closing date, a short description and a link to the full advert. It appears on
+the Join us page, and the home page says "We're hiring" until the closing date.
+The day after, it disappears by itself (the site rebuilds every night).
+
+**Search results.** Each page has a *Search description*: one or two sentences
+that Google shows under the page title. Keep it specific (what the page is
+about, plus "Mackinder Lab" and "University of York").
+
+**Photo sizes.** Upload photos as they are. The site shrinks large images
+automatically when it publishes, so phone photos are fine.
+
 **Add a new page.** In *Pages*, add an entry, give it a title and a web
 address like `/outreach/`, then add it to the *Menu*.
 

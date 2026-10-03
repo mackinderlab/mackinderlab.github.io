@@ -10,10 +10,21 @@ It is a [Jekyll](https://jekyllrb.com) site hosted on GitHub Pages.
 
 ## How it builds
 
-Every push to `main` runs `.github/workflows/pages.yml`, which:
+Every push to `main`, and a nightly schedule (so job adverts expire), runs
+`.github/workflows/pages.yml`, which:
 
-1. runs `scripts/fill_dois.py` to fill in missing publication details from Crossref, and
-2. builds the site with Jekyll and publishes it to GitHub Pages.
+1. runs `scripts/fill_dois.py` to fill in missing publication details from Crossref,
+2. runs `scripts/resize_images.py` to shrink oversized images (build copy only), and
+3. builds the site with Jekyll and publishes it to GitHub Pages.
+
+`.github/workflows/links.yml` builds the site every Monday, checks all links with
+lychee and opens or updates a `broken-links` issue if any fail.
+
+Search: `jekyll-sitemap` writes `/sitemap.xml`, `robots.txt` points to it, and
+`_includes/head.html` sets canonical links, descriptions, social cards and
+ResearchOrganization JSON-LD. Paste a Google Search Console verification code
+into `google_site_verification` in `_config.yml`. `redirects/` maps the old Weebly
+page names (e.g. `/people.html`) to the new addresses.
 
 ## Run it locally
 

@@ -1,6 +1,7 @@
 ---
 title: Research
 permalink: /research/
+description: How the Mackinder Lab uses systems and synthetic biology to study CO2-concentrating mechanisms, pyrenoids and Rubisco in green algae, diatoms and cyanobacteria.
 ---
 
 ## Mackinder Lab Vision

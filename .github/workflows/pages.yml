@@ -4,6 +4,9 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  schedule:
+    # Rebuild daily so job adverts disappear after their closing date.
+    - cron: "15 3 * * *"
 
 permissions:
   contents: read
@@ -24,8 +27,10 @@ jobs:
           python-version: "3.12"
       - name: Fill in publication details from DOIs
         run: |
-          pip install pyyaml
+          pip install pyyaml pillow
           python scripts/fill_dois.py
+      - name: Shrink oversized images
+        run: python scripts/resize_images.py
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: "3.3"

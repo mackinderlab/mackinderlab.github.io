@@ -4,6 +4,22 @@ layout: default
 <article class="page{% if page.wide %} wide{% endif %}">
   {% if page.title %}<h1>{{ page.title }}</h1>{% endif %}
   {% if page.notice and page.notice != "" %}<p class="notice">{{ page.notice }}</p>{% endif %}
+  {%- if page.url == "/join/" %}
+  {% include open-positions.html %}
+  {%- if open_positions.size > 0 %}
+  <section class="positions" id="positions">
+    <h2>Open positions</h2>
+    {%- for job in open_positions %}
+    <div class="position">
+      <h3>{% if job.url and job.url != "" %}<a href="{{ job.url }}">{{ job.title }}</a>{% else %}{{ job.title }}{% endif %}</h3>
+      <p class="meta">Closing date: {{ job.closes | date: "%-d %B %Y" }}</p>
+      {% if job.summary %}{{ job.summary | markdownify }}{% endif %}
+      {% if job.url and job.url != "" %}<p><a class="button" href="{{ job.url }}">Full advert and how to apply</a></p>{% endif %}
+    </div>
+    {%- endfor %}
+  </section>
+  {%- endif %}
+  {%- endif %}
   {{ content }}
   {% if page.map %}
   <iframe class="map" title="Map of the University of York" loading="lazy"

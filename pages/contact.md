@@ -2,6 +2,7 @@
 title: Contact
 permalink: /contact/
 map: true
+description: How to contact the Mackinder Lab in the Department of Biology at the University of York.
 ---
 
 We are always interested in hearing from talented people who share a passion
