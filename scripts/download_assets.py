@@ -37,7 +37,7 @@ FILES = {
     "whatsapp-image-2025-03-09-at-15-38-08_orig.jpeg": "assets/images/news/whatsapp-image-2025-03-09-at-15-38-08_orig.jpeg",
     "pottery_orig.jpg": "assets/images/news/pottery_orig.jpg",
     "published/kakaotalk-20231119-103129304-02.jpg": "assets/images/news/kakaotalk-20231119-103129304-02.jpg",
-    "published/kakaotalk-20231002-231129475_orig.jpg": "assets/images/news/kakaotalk-20231002-231129475_orig.jpg",
+    "kakaotalk-20231002-231129475_orig.jpg": "assets/images/news/kakaotalk-20231002-231129475_orig.jpg",
     "20211203-mackinder-lab-christmas-party-forage_orig.jpg": "assets/images/news/20211203-mackinder-lab-christmas-party-forage_orig.jpg",
     "20210929-irina-farewell-lunch_orig.jpg": "assets/images/news/20210929-irina-farewell-lunch_orig.jpg",
     "20210819-pubtrip-jamie-last-day_orig.jpg": "assets/images/news/20210819-pubtrip-jamie-last-day_orig.jpg",
@@ -49,6 +49,12 @@ FILES = {
     "img-20181114-114443_orig.jpg": "assets/images/news/img-20181114-114443_orig.jpg",
     "published/20180423-170130.jpg": "assets/images/news/20180423-170130.jpg",
     "published/img-4622.jpg": "assets/images/news/img-4622.jpg",
+    "image0_orig.jpeg": "assets/images/news/image0_orig.jpeg",
+    "201204-algaeandchristmas_orig.jpg": "assets/images/news/201204-algaeandchristmas_orig.jpg",
+    "screenshot-2019-12-12-at-12-31-45_orig.png": "assets/images/news/screenshot-2019-12-12-at-12-31-45_orig.png",
+    "20181220-113424-1_orig.jpg": "assets/images/news/20181220-113424-1_orig.jpg",
+    "published/img-4619.jpg": "assets/images/news/img-4619.jpg",
+    "published/whatsapp-image-2025-03-09-at-15-38-08-1.jpeg": "assets/images/news/whatsapp-image-2025-03-09-at-15-38-08-1.jpeg",
 }
 
 MANUAL = [
@@ -112,7 +118,8 @@ def main():
             print(f"saved  {dest}")
         except Exception as exc:
             print(f"FAILED {dest}: {exc}")
-    scrape()
+    if not (ROOT / "assets/images/weebly/index.txt").exists():
+        scrape()
     print("\nSave these by hand from the old site:")
     for m in MANUAL:
         print("  " + m)
