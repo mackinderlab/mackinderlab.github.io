@@ -25,6 +25,7 @@ groups:
       <h3>{{ person.name }}</h3>
       <p class="role">{{ person.role }}</p>
       {{ cosup }}
+      {% if person.website %}<p class="site-link"><a href="{{ person.website }}">Personal website ↗</a></p>{% endif %}
       {% if bio != "" %}<p class="teaser">{{ bio | truncatewords: 40 }}</p>{% endif %}
       {% if bio != "" %}<button class="more" onclick="document.getElementById('bio-{{ id }}').showModal()">Read more</button>{% elsif person.email or person.website %}<button class="more" onclick="document.getElementById('bio-{{ id }}').showModal()">Contact</button>{% endif %}
     </div>

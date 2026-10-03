@@ -149,6 +149,7 @@ th, td { text-align: left; padding: 0.5rem; border-bottom: 1px solid var(--borde
 .bio-dialog h3 { margin: 0; font-size: 1.4rem; }
 .initials { display: flex; align-items: center; justify-content: center; width: 100%; aspect-ratio: 1 / 1; border-radius: 4px; background: var(--surface); border: 1px solid var(--border); color: var(--muted); font-size: 2.6rem; font-weight: 300; letter-spacing: 0.05em; }
 .bio-dialog .initials { width: 200px; }
+.person .site-link { font-size: 0.88rem; margin: -0.3rem 0 0.4rem; }
 .cosup { font-size: 0.85rem; color: var(--muted); margin: -0.3rem 0 0.4rem; }
 .bio-dialog .cosup { margin: -0.2rem 0 0.6rem; font-size: 0.95rem; }
 .bio-dialog .email { margin: -0.2rem 0 0.8rem; font-size: 0.95rem; }
