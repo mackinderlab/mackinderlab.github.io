@@ -1,0 +1,20 @@
+name: Snapshot the old Weebly pages
+
+on:
+  workflow_dispatch:
+
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download page HTML
+        run: |
+          mkdir snapshot
+          for p in index research people publications joining-the-lab contact news resources-cyanotag plastid-preview-2019 york-physics-of-pyrenoids-project-yp3; do
+            curl -sSL -A "Mozilla/5.0" "https://mackinderlab.weebly.com/$p.html" -o "snapshot/$p.html"
+          done
+          ls -la snapshot
+      - uses: actions/upload-artifact@v4
+        with:
+          name: weebly-snapshot
+          path: snapshot
