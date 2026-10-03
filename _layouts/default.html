@@ -8,17 +8,22 @@
   </main>
   {% include footer.html %}
   <script>
-    // Banner parallax: the image drifts more slowly than the page as you scroll.
+    // Home banner: the image drifts more slowly than the page and the headline fades
+    // as the banner collapses to a strip; the strip and menu then stay pinned at the top.
     (function () {
-      var img = document.querySelector('.hero-img');
-      if (!img || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-      var hero = img.parentElement, ticking = false;
+      var head = document.querySelector('.masthead-home');
+      if (!head) return;
+      var img = head.querySelector('.hero-img'), text = head.querySelector('.hero-text');
+      var still = window.matchMedia('(prefers-reduced-motion: reduce)').matches, ticking = false;
       function update() {
-        var y = window.scrollY;
-        if (y <= hero.offsetHeight) img.style.transform = 'translate3d(0,' + (y * 0.45) + 'px,0) scale(1.08)';
+        var collapse = -parseFloat(getComputedStyle(head).top) || 1;
+        var y = Math.min(window.scrollY, collapse);
+        if (!still) img.style.transform = 'translate3d(0,' + (y * 0.45) + 'px,0) scale(1.08)';
+        if (text) text.style.opacity = Math.max(0, 1 - y / (collapse * 0.45));
         ticking = false;
       }
       window.addEventListener('scroll', function () { if (!ticking) { requestAnimationFrame(update); ticking = true; } }, { passive: true });
+      window.addEventListener('resize', update);
       update();
     })();
   </script>

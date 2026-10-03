@@ -36,8 +36,11 @@ automatically. If someone publishes under a different name (for example
 
 **Add or update a person.** Go to *People*. Pick their *Section* (for example
 Postdocs and Fellows), set *Order on page* (lower numbers come first), upload a
-square photo and write a short bio. When someone leaves, change their section
-to *Former members* and fill in *Now at*.
+square photo and write a short bio. *Email* and *Personal website* are optional
+and appear in the pop-up bio. For students shared with another lab, fill in
+*Co-supervisor* and their web page. With no photo, the card shows the person's
+initials. When someone leaves, change their section to *Former members*, fill in
+*Now at* and clear *Email*.
 
 **Edit a page** (Research, Join us, Contact, Resources). Go to *Pages* and open
 it. The text box works like a simple word processor: headings, bold, links,
@@ -48,7 +51,7 @@ line straight after the picture.
 address like `/outreach/`, then add it to the *Menu*.
 
 **Change the menu or home page.** Use *Menu* to rename, reorder or add items,
-and *Home page* to change the headline, introduction, the banner image across the top of every page, and how many news items the home page shows.
+and *Home page* to change the headline, introduction, the banner image across the top of every page (and its credit line), the Bluesky handle, and how many news items the home page shows. *Funders* edits the list at the bottom of every page.
 
 ## What needs a technical person
 

@@ -16,22 +16,28 @@ groups:
   <div class="people-grid">
     {% for person in members %}
     {% assign id = person.name | slugify %}
+    {% assign words = person.name | split: " " %}
+    {% capture pic %}{% if person.photo and person.photo != "" %}{% include img.html src=person.photo alt=person.name %}{% else %}<span class="initials" role="img" aria-label="{{ person.name }}">{{ words.first | slice: 0 }}{{ words.last | slice: 0 }}</span>{% endif %}{% endcapture %}
+    {% capture cosup %}{% if person.cosupervisor %}<p class="cosup">With {% if person.cosupervisor_url %}<a href="{{ person.cosupervisor_url }}">{{ person.cosupervisor }}</a>{% else %}{{ person.cosupervisor }}{% endif %}</p>{% endif %}{% endcapture %}
+    {% assign bio = person.content | strip_html | strip %}
     <div class="person">
-      <button class="photo" onclick="document.getElementById('bio-{{ id }}').showModal()" aria-label="Read about {{ person.name }}">{% include img.html src=person.photo alt=person.name %}</button>
+      <button class="photo" onclick="document.getElementById('bio-{{ id }}').showModal()" aria-label="About {{ person.name }}">{{ pic }}</button>
       <h3>{{ person.name }}</h3>
       <p class="role">{{ person.role }}</p>
-      <p class="teaser">{{ person.content | strip_html | truncatewords: 40 }}</p>
-      <button class="more" onclick="document.getElementById('bio-{{ id }}').showModal()">Read more</button>
+      {{ cosup }}
+      {% if bio != "" %}<p class="teaser">{{ bio | truncatewords: 40 }}</p>{% endif %}
+      {% if bio != "" %}<button class="more" onclick="document.getElementById('bio-{{ id }}').showModal()">Read more</button>{% elsif person.email or person.website %}<button class="more" onclick="document.getElementById('bio-{{ id }}').showModal()">Contact</button>{% endif %}
     </div>
     <dialog class="bio-dialog" id="bio-{{ id }}" onclick="if (event.target === this) this.close()">
       <button class="close" onclick="this.closest('dialog').close()" aria-label="Close">×</button>
       <div class="inner">
-        {% include img.html src=person.photo alt=person.name %}
+        {{ pic }}
         <div>
           <h3>{{ person.name }}</h3>
           <p class="role" style="color:var(--accent);font-weight:600">{{ person.role }}</p>
-          {% if person.email %}<p class="email"><a href="mailto:{{ person.email }}">{{ person.email }}</a></p>{% endif %}
-          <div class="bio">{{ person.content | markdownify }}</div>
+          {{ cosup }}
+          {% if person.email or person.website %}<p class="email">{% if person.email %}<a href="mailto:{{ person.email }}">{{ person.email }}</a>{% endif %}{% if person.email and person.website %} · {% endif %}{% if person.website %}<a href="{{ person.website }}">Personal website</a>{% endif %}</p>{% endif %}
+          {% if bio != "" %}<div class="bio">{{ person.content | markdownify }}</div>{% endif %}
         </div>
       </div>
     </dialog>

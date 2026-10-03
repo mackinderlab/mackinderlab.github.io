@@ -43,7 +43,11 @@ h3 { font-size: 1.15rem; font-weight: 600; }
 .container { max-width: var(--max); margin: 0 auto; padding: 0 16px; }
 main.container { padding-top: 2.5rem; padding-bottom: 4rem; min-height: 60vh; }
 
-/* Banner with parallax (see default layout) */
+/* Banner and menu stay pinned at the top. On the home page the tall banner first
+   scrolls up until only a strip the height of the other pages' banner is left. */
+.masthead { position: sticky; top: 0; z-index: 20; }
+.masthead-home { top: calc(140px - min(58vh, 540px)); }
+.hero-credit { position: absolute; right: 12px; bottom: 6px; z-index: 2; font-size: 0.72rem; color: rgba(255,255,255,0.85); text-shadow: 0 1px 4px rgba(0,0,0,0.8); }
 .hero { position: relative; overflow: hidden; height: 140px; background: #3b6b4a; }
 .hero-home { height: min(58vh, 540px); }
 .hero-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 45%; transform: scale(1.08); will-change: transform; }
@@ -51,7 +55,7 @@ main.container { padding-top: 2.5rem; padding-bottom: 4rem; min-height: 60vh; }
 .hero-text { position: absolute; inset: 0; z-index: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: #fff; text-shadow: 0 1px 12px rgba(0,0,0,0.55); }
 .hero-text h1 { font-size: clamp(1.7rem, 4.2vw, 3.1rem); font-weight: 600; max-width: 900px; margin: 0 0 1rem; }
 .hero-text p { font-size: clamp(1rem, 1.6vw, 1.2rem); max-width: 760px; margin: 0; }
-@media (max-width: 640px) { .hero { height: 90px; } .hero-home { height: 64vh; } }
+@media (max-width: 640px) { .hero { height: 90px; } .hero-home { height: 64vh; } .masthead-home { top: calc(90px - 64vh); } }
 
 /* Header */
 .site-header { border-bottom: 1px solid var(--border); background: var(--bg); }
@@ -71,6 +75,11 @@ main.container { padding-top: 2.5rem; padding-bottom: 4rem; min-height: 60vh; }
 /* Footer */
 .site-footer { border-top: 1px solid var(--border); color: var(--muted); font-size: 0.9rem; padding: 1.75rem 0; }
 .site-footer p { margin: 0.25rem 0; }
+.footer-line { display: flex; flex-wrap: wrap; align-items: center; gap: 0.4rem 0.9rem; }
+.footer-line .social { display: inline-flex; gap: 0.8rem; margin-left: auto; }
+.footer-line .social a { display: inline-flex; color: var(--muted); }
+.footer-line .social a:hover { color: var(--accent); }
+.footer-line svg { width: 20px; height: 20px; fill: currentColor; }
 .site-footer a { color: var(--muted); }
 .funders { display: flex; flex-wrap: wrap; align-items: center; gap: 0.6rem 1rem; padding-bottom: 1.25rem; margin-bottom: 1.25rem; border-bottom: 1px solid var(--border); }
 .funders-label { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; }
@@ -138,10 +147,14 @@ th, td { text-align: left; padding: 0.5rem; border-bottom: 1px solid var(--borde
 .bio-dialog .inner { display: grid; grid-template-columns: 200px 1fr; gap: 1.5rem; padding: 1.75rem; }
 .bio-dialog img { width: 200px; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 4px; }
 .bio-dialog h3 { margin: 0; font-size: 1.4rem; }
+.initials { display: flex; align-items: center; justify-content: center; width: 100%; aspect-ratio: 1 / 1; border-radius: 4px; background: var(--surface); border: 1px solid var(--border); color: var(--muted); font-size: 2.6rem; font-weight: 300; letter-spacing: 0.05em; }
+.bio-dialog .initials { width: 200px; }
+.cosup { font-size: 0.85rem; color: var(--muted); margin: -0.3rem 0 0.4rem; }
+.bio-dialog .cosup { margin: -0.2rem 0 0.6rem; font-size: 0.95rem; }
 .bio-dialog .email { margin: -0.2rem 0 0.8rem; font-size: 0.95rem; }
 .bio-dialog .bio { font-size: 0.95rem; }
 .bio-dialog .close { position: absolute; top: 0.6rem; right: 0.8rem; background: none; border: 0; font-size: 1.6rem; line-height: 1; color: var(--muted); cursor: pointer; }
-@media (max-width: 600px) { .bio-dialog .inner { grid-template-columns: 1fr; } .bio-dialog img { width: 140px; } }
+@media (max-width: 600px) { .bio-dialog .inner { grid-template-columns: 1fr; } .bio-dialog img, .bio-dialog .initials { width: 140px; } }
 .alumni-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 1.5rem 1rem; }
 .alumni-grid img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 4px; background: var(--border); }
 .alumni-grid .name { font-weight: 600; display: block; margin-top: 0.4rem; font-size: 0.95rem; }

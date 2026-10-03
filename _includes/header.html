@@ -1,3 +1,4 @@
+<div class="masthead{% if page.url == '/' %} masthead-home{% endif %}">
 <div class="hero{% if page.url == '/' %} hero-home{% endif %}">
   <img class="hero-img" src="{{ site.data.home.banner | relative_url }}" alt="{{ site.data.home.banner_alt | escape }}" fetchpriority="high">
   {%- if page.url == '/' %}
@@ -5,6 +6,9 @@
     <h1>{{ site.data.home.tagline }}</h1>
     <p>{{ site.data.home.intro }}</p>
   </div>
+  {%- endif %}
+  {%- if site.data.home.banner_credit and site.data.home.banner_credit != "" %}
+  <span class="hero-credit">{{ site.data.home.banner_credit }}</span>
   {%- endif %}
 </div>
 <header class="site-header">
@@ -22,3 +26,4 @@
     </nav>
   </div>
 </header>
+</div>

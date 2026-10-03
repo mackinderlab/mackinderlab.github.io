@@ -2,7 +2,7 @@
 name: Finn Russell
 role: MRes Student
 group: phd
-order: 11
+order: 15
 photo: /assets/images/people/finn-russell.jpg
 email: finn.russell@york.ac.uk
 ---

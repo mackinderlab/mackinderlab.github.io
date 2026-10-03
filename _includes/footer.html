@@ -9,8 +9,10 @@
     </ul>
   </div>
   {%- endif %}
-  <div class="container">
-    <p>{{ site.title }} · Department of Biology, University of York · <a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
-    {% if site.data.social %}<p>{% for s in site.data.social %}<a href="{{ s.url }}">{{ s.name }}</a>{% unless forloop.last %} · {% endunless %}{% endfor %}</p>{% endif %}
+  <div class="container footer-line">
+    <span>{{ site.title }} · Department of Biology, University of York · <a href="mailto:{{ site.email }}">{{ site.email }}</a></span>
+    {%- if site.data.social %}
+    <span class="social">{% for s in site.data.social %}<a href="{{ s.url }}" aria-label="{{ s.name }}" title="{{ s.name }}">{% include icon.html name=s.icon label=s.name %}</a>{% endfor %}</span>
+    {%- endif %}
   </div>
 </footer>

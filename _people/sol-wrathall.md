@@ -2,7 +2,7 @@
 name: Sol Wrathall
 role: Research Technician
 group: technician
-order: 12
+order: 16
 photo: /assets/images/people/sol-wrathall.jpg
 email: sol.wrathall@york.ac.uk
 ---

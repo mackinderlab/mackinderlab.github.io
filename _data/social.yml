@@ -1,3 +1,10 @@
-# Social links shown in the footer. Check these are still active.
+# Social links shown as icons in the footer. icon: bluesky, x, scholar, orcid, linkedin or github.
+- name: Bluesky
+  url: https://bsky.app/profile/mackinderlab.bsky.social
+  icon: bluesky
 - name: X / Twitter
   url: https://twitter.com/mackinderlab
+  icon: x
+- name: Google Scholar
+  url: https://scholar.google.com/citations?hl=en&user=X6H3EJ0AAAAJ&view_op=list_works&sortby=pubdate
+  icon: scholar

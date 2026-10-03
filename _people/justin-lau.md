@@ -4,7 +4,7 @@ role: Postdoctoral Researcher
 group: postdoc
 order: 7
 photo: /assets/images/people/justin-lau.jpg
-email: csl511@york.ac.uk
+email: justin.lau@york.ac.uk
 pub_names: ["Lau CS"]
 ---
 

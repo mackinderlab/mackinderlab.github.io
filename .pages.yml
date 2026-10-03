@@ -66,6 +66,9 @@ content:
         type: image
         options: { media: images, path: assets/images/people }
       - { name: email, label: Email, type: string, description: "Shown in the full bio. Current members only." }
+      - { name: website, label: Personal website, type: string, description: "Optional link shown in the full bio." }
+      - { name: cosupervisor, label: Co-supervisor, type: string, description: "For students shared with another lab, e.g. Chris McDonald." }
+      - { name: cosupervisor_url, label: Co-supervisor web page, type: string }
       - { name: now, label: Now at (former members only), type: string }
       - { name: pub_names, label: Other names on papers, type: string, list: true, description: "Only if they publish under a different name, e.g. Lau CS. Used to show lab members in bold." }
       - name: body
@@ -136,6 +139,7 @@ content:
         type: image
         options: { media: images, path: assets/images }
       - { name: banner_alt, label: Banner description, type: string }
+      - { name: banner_credit, label: Banner image credit, type: string, description: "Shown small in the corner of the banner, e.g. Image courtesy of ..." }
       - { name: news_count, label: News items on home page, type: number }
       - { name: bluesky, label: Bluesky handle, type: string, description: "e.g. mackinderlab.bsky.social. Shows the latest posts on the home page. Leave empty to hide." }
 
