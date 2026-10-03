@@ -33,8 +33,6 @@ FILES = {
     "np_2017_mackinder.pdf": "assets/files/np_2017_mackinder.pdf",
     # News photos
     "gaurav_orig.jpg": "assets/images/news/gaurav_orig.jpg",
-    "christmas-meal-2_orig.jpg": "assets/images/news/christmas-meal-2_orig.jpg",
-    "ccm11-group-photo_orig.jpg": "assets/images/news/ccm11-group-photo_orig.jpg",
     "mld8_orig.jpg": "assets/images/news/mld8_orig.jpg",
     "whatsapp-image-2025-03-09-at-15-38-08_orig.jpeg": "assets/images/news/whatsapp-image-2025-03-09-at-15-38-08_orig.jpeg",
     "pottery_orig.jpg": "assets/images/news/pottery_orig.jpg",
@@ -61,6 +59,45 @@ MANUAL = [
 ]
 
 
+PAGES = {
+    "people": "https://mackinderlab.weebly.com/people.html",
+    "research": "https://mackinderlab.weebly.com/research.html",
+    "home": "https://mackinderlab.weebly.com/",
+}
+
+
+def scrape():
+    """Save every uploaded image on the People, Research and Home pages, in page order,
+    with a list (assets/images/weebly/index.txt) of filename and nearby text."""
+    import html as htmlmod
+    import re
+    lines = []
+    for page, url in PAGES.items():
+        req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+        text = urllib.request.urlopen(req, timeout=60).read().decode("utf-8", "replace")
+        for n, m in enumerate(re.finditer(r'<img[^>]+src="([^"]*?/uploads/[^"]+)"[^>]*>', text)):
+            src = htmlmod.unescape(m.group(1)).split("?")[0]
+            if src.startswith("//"):
+                src = "https:" + src
+            elif src.startswith("/"):
+                src = "https://mackinderlab.weebly.com" + src
+            alt = re.search(r'alt="([^"]*)"', m.group(0))
+            after = re.sub(r"<[^>]+>", " ", text[m.end(): m.end() + 600])
+            after = " ".join(htmlmod.unescape(after).split())[:120]
+            name = f"{page}-{n:02d}-" + src.rsplit("/", 1)[-1]
+            out = ROOT / "assets/images/weebly" / name
+            out.parent.mkdir(parents=True, exist_ok=True)
+            try:
+                r = urllib.request.urlopen(urllib.request.Request(src, headers={"User-Agent": "Mozilla/5.0"}), timeout=60)
+                out.write_bytes(r.read())
+            except Exception as exc:
+                print(f"FAILED {src}: {exc}")
+                continue
+            lines.append(f"{name}\talt={alt.group(1) if alt else ''}\tnext={after}")
+            print(f"saved  {name}")
+    (ROOT / "assets/images/weebly/index.txt").write_text("\n".join(lines) + "\n")
+
+
 def main():
     for src, dest in FILES.items():
         out = ROOT / dest
@@ -75,6 +112,7 @@ def main():
             print(f"saved  {dest}")
         except Exception as exc:
             print(f"FAILED {dest}: {exc}")
+    scrape()
     print("\nSave these by hand from the old site:")
     for m in MANUAL:
         print("  " + m)
