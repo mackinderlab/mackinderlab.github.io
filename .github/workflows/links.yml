@@ -40,7 +40,6 @@ jobs:
             --exclude "^https?://maps\.google\."
             --exclude "^https?://fonts\.(googleapis|gstatic)\.com"
             --exclude "^https://mackinderlab\.github\.io"
-            --exclude-mail
             "_site/**/*.html"
           output: lychee/report.md
           fail: false
