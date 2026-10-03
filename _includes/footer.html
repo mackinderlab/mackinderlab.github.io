@@ -1,4 +1,14 @@
 <footer class="site-footer">
+  {%- if site.data.funders %}
+  <div class="container funders">
+    <span class="funders-label">Our research is funded by</span>
+    <ul>
+      {%- for f in site.data.funders %}
+      <li>{% if f.url and f.url != "" %}<a href="{{ f.url }}">{{ f.name }}</a>{% else %}{{ f.name }}{% endif %}</li>
+      {%- endfor %}
+    </ul>
+  </div>
+  {%- endif %}
   <div class="container">
     <p>{{ site.title }} · Department of Biology, University of York · <a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
     {% if site.data.social %}<p>{% for s in site.data.social %}<a href="{{ s.url }}">{{ s.name }}</a>{% unless forloop.last %} · {% endunless %}{% endfor %}</p>{% endif %}

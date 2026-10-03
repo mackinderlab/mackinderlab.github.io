@@ -1,0 +1,9 @@
+# Funders shown at the bottom of every page. Edit in Pages CMS under "Funders".
+- name: BBSRC
+  url: https://www.ukri.org/councils/bbsrc/
+- name: The Royal Society
+  url: https://royalsociety.org/
+- name: Gates Foundation
+  url: https://www.gatesfoundation.org/
+- name: Carbon Technology Research Foundation
+  url: ""

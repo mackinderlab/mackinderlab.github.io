@@ -3,11 +3,6 @@ layout: default
 title: Home
 ---
 {% assign home = site.data.home %}
-<section class="tagline">
-  <h1>{{ home.tagline }}</h1>
-  <p>{{ home.intro }}</p>
-</section>
-
 <div class="home-grid">
   <div class="home-main">
     {% assign today = site.time | date: "%Y-%m-%d" %}
@@ -24,14 +19,20 @@ title: Home
 
     <h2>News</h2>
     {% assign recent = site.posts | slice: 0, home.news_count %}
-    {% assign by_year = recent | group_by_exp: "p", "p.date | date: '%Y'" %}
-    {% for y in by_year %}
-      <h3 class="year">{{ y.name }}</h3>
-      <ul class="news-list">
-        {% for post in y.items %}<li><a href="{{ post.url | relative_url }}">{{ post.title }}</a> <span class="date">[{{ post.date | date: "%b %Y" }}]</span></li>{% endfor %}
-      </ul>
-    {% endfor %}
+    <ul class="news-list">
+      {% for post in recent %}<li><span class="date">{{ post.date | date: "%b %Y" }}</span><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>{% endfor %}
+    </ul>
     <p><a href="{{ '/news/' | relative_url }}">All news →</a></p>
+
+    <h2>Recent papers</h2>
+    {% assign shown = site.data.publications | where_exp: "p", "p.hidden != true" %}
+    <ul class="mini-pubs">
+      {% for p in shown limit:4 %}
+      <li>{% if p.doi %}<a href="https://doi.org/{{ p.doi }}">{{ p.title }}</a>{% else %}{{ p.title }}{% endif %}
+        <span class="muted"><em>{% if p.preprint %}bioRxiv{% else %}{{ p.journal }}{% endif %}</em> {{ p.year }}</span></li>
+      {% endfor %}
+    </ul>
+    <p><a href="{{ '/publications/' | relative_url }}">All publications →</a></p>
   </div>
 
   <aside class="home-side">
@@ -42,26 +43,22 @@ title: Home
       <span class="feature-caption">{{ latest.title }}</span>
     </a>
     {% endif %}
-    <h2>Recent papers</h2>
-    {% assign shown = site.data.publications | where_exp: "p", "p.hidden != true" %}
-    <ul class="mini-pubs">
-      {% for p in shown limit:4 %}
-      <li>{% if p.doi %}<a href="https://doi.org/{{ p.doi }}">{{ p.title }}</a>{% else %}{{ p.title }}{% endif %}
-        <span class="muted"><em>{% if p.preprint %}bioRxiv{% else %}{{ p.journal }}{% endif %}</em> {{ p.year }}</span></li>
-      {% endfor %}
-    </ul>
-    <p><a href="{{ '/publications/' | relative_url }}">All publications →</a></p>
-    <div class="join-card">
-      <h2>Join us</h2>
-      <p>We are always interested in hearing from talented people who share a passion for our research.</p>
-      <a class="button" href="{{ '/join/' | relative_url }}">Opportunities</a>
-    </div>
     {%- if site.data.home.bluesky %}
     <section class="bsky">
       <h2>On Bluesky</h2>
       <script type="module" src="https://cdn.jsdelivr.net/npm/bsky-embed@0.3.0/dist/bsky-embed.es.js" async></script>
-      <bsky-embed username="{{ site.data.home.bluesky | remove: '@' }}" limit="5" link-target="_blank" load-more="true"></bsky-embed>
+      <div class="bsky-scroll">
+        <bsky-embed username="{{ site.data.home.bluesky | remove: '@' }}" limit="10" link-target="_blank" load-more="true"></bsky-embed>
+      </div>
     </section>
     {%- endif %}
   </aside>
 </div>
+
+<section class="join-band">
+  <div>
+    <h2>Join us</h2>
+    <p>We are always interested in hearing from talented people who share a passion for our research.</p>
+  </div>
+  <a class="button" href="{{ '/join/' | relative_url }}">Opportunities</a>
+</section>

@@ -1,5 +1,11 @@
 <div class="hero{% if page.url == '/' %} hero-home{% endif %}">
   <img class="hero-img" src="{{ site.data.home.banner | relative_url }}" alt="{{ site.data.home.banner_alt | escape }}" fetchpriority="high">
+  {%- if page.url == '/' %}
+  <div class="hero-text container">
+    <h1>{{ site.data.home.tagline }}</h1>
+    <p>{{ site.data.home.intro }}</p>
+  </div>
+  {%- endif %}
 </div>
 <header class="site-header">
   <div class="container header-inner">

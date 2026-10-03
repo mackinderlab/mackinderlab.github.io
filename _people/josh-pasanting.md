@@ -4,6 +4,7 @@ role: PhD Student
 group: phd
 order: 10
 photo: /assets/images/people/josh-pasanting.jpg
+email: snc547@york.ac.uk
 ---
 
 I completed my BSc in Biology at Lancaster University where I was first introduced to plant science research. I was particularly captivated by Rubisco research and its potential to enhance carbon assimilation in crops. I then completed my MSc in Plant Science and Biotechnology at the University of Leeds where I had the opportunity to undertake a project in the West Lab investigating the mechanistic link between genome maintenance and seedling vigour in Arabidopsis to elucidate the genetic determinants of high-quality seeds.

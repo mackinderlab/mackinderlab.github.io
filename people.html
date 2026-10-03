@@ -30,6 +30,7 @@ groups:
         <div>
           <h3>{{ person.name }}</h3>
           <p class="role" style="color:var(--accent);font-weight:600">{{ person.role }}</p>
+          {% if person.email %}<p class="email"><a href="mailto:{{ person.email }}">{{ person.email }}</a></p>{% endif %}
           <div class="bio">{{ person.content | markdownify }}</div>
         </div>
       </div>

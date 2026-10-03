@@ -65,6 +65,7 @@ content:
         description: A square photo works best.
         type: image
         options: { media: images, path: assets/images/people }
+      - { name: email, label: Email, type: string, description: "Shown in the full bio. Current members only." }
       - { name: now, label: Now at (former members only), type: string }
       - { name: pub_names, label: Other names on papers, type: string, list: true, description: "Only if they publish under a different name, e.g. Lau CS. Used to show lab members in bold." }
       - name: body
@@ -150,6 +151,16 @@ content:
       - { name: name, label: Event, type: string }
       - { name: url, label: Event link, type: string }
       - { name: who, label: Who is going, type: string }
+
+  - name: funders
+    label: Funders
+    type: file
+    path: _data/funders.yml
+    format: yaml
+    list: true
+    fields:
+      - { name: name, label: Funder, type: string, required: true }
+      - { name: url, label: Website, type: string }
 
   - name: menu
     label: Menu
