@@ -25,6 +25,7 @@ jobs:
         run: bundle exec jekyll build
         env:
           JEKYLL_ENV: production
+      # 403 is accepted because journal sites (OUP, Wiley, Science) block automated checks.
       - name: Check links
         id: lychee
         uses: lycheeverse/lychee-action@v2
@@ -34,7 +35,7 @@ jobs:
             --no-progress
             --max-retries 3
             --timeout 30
-            --accept 200,206,429
+            --accept 200,206,403,429
             --exclude "^https?://(www\.)?(twitter\.com|x\.com|linkedin\.com)"
             --exclude "^https?://scholar\.google\."
             --exclude "^https?://maps\.google\."
