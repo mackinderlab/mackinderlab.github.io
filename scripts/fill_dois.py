@@ -53,7 +53,12 @@ def details_from(msg):
     journal = (msg.get("container-title") or [None])[0]
     if not journal and msg.get("type") == "posted-content":
         journal = msg.get("institution", [{}])[0].get("name") or "Preprint"
+    vol, issue, page = msg.get("volume"), msg.get("issue"), msg.get("page") or msg.get("article-number")
+    details = None
+    if vol:
+        details = vol + (f"({issue})" if issue else "") + (f":{page}" if page else "")
     return {
+        "details": details,
         "title": (msg.get("title") or [None])[0],
         "authors": format_authors(msg.get("author", [])),
         "journal": journal,
@@ -77,10 +82,10 @@ def main():
         except Exception as exc:  # network or bad DOI: keep building
             print(f"warning: could not look up {doi}: {exc}", file=sys.stderr)
             continue
-        for field in FIELDS:
+        for field in FIELDS + ("details",):
             if not entry.get(field) and found.get(field):
                 entry[field] = found[field]
-        if found.get("journal", "").lower().startswith(("biorxiv", "cold spring harbor")):
+        if (found.get("journal") or "").lower().startswith(("biorxiv", "cold spring harbor")):
             entry.setdefault("preprint", True)
         filled += 1
         print(f"filled {doi}: {entry.get('title')}")

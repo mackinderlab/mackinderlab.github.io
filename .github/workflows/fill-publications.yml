@@ -1,0 +1,37 @@
+name: Fill in publication details
+
+# When someone adds a paper with only its DOI, this looks up the title, authors,
+# journal and year on Crossref and saves them back into _data/publications.yml,
+# so they also show (and can be corrected) in Pages CMS.
+
+on:
+  push:
+    branches: [main]
+    paths: [_data/publications.yml]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: fill-publications
+  cancel-in-progress: false
+
+jobs:
+  fill:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install pyyaml
+      - run: python scripts/fill_dois.py
+      - name: Save any filled-in details
+        run: |
+          if git diff --quiet; then echo "Nothing to fill"; exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898499+github-actions[bot]@users.noreply.github.com"
+          git commit -am "Fill in publication details from DOIs"
+          git pull --rebase origin main
+          git push origin HEAD:main
