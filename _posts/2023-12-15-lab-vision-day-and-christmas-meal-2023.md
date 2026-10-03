@@ -1,7 +1,10 @@
 ---
-title: "Lab vision day and Christmas meal 2023"
+title: Lab vision day and Christmas meal 2023
 date: 2023-12-15
-image: /assets/images/news/kakaotalk-20231119-103129304-02.jpg
 ---
 
-We spent a day at the Yorkshire Arboretum with team-building exercises, a guided tour and a visit to the red squirrel enclosure, followed by an Indian meal.
+To finish off a very busy 2023 we spent a day in the Yorkshire Arboretum, where we participated in team building exercises, discussed our strengths as a group and workshopped ways we could improve. Afterwards we attended a guided tour of the arboretum and found out many interesting facts about the incredibly diverse tree collection hosted on the grounds.
+
+But the highlight of the day was definitely the visit to the red squirrels enclosure. It is here where the lovely rodents are kept safe and bred with the intention of one day being re-introduced to their native woodlands.
+
+The day concluded with a delicious Christmas meal at an Indian restaurant.

@@ -1,6 +1,7 @@
 ---
-name: "Dom Wood"
+name: Dom Wood
 group: alumni
 order: 103
-now: "PhD student, Oxford"
+photo: /assets/images/people/dom-wood.jpg
+now: PhD student at University of Oxford
 ---

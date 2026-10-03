@@ -1,6 +1,7 @@
 ---
-name: "Gaurav Kumar"
+name: Gaurav Kumar
 group: alumni
 order: 112
-now: "Azim Premji University, India"
+photo: /assets/images/people/gaurav-kumar.jpg
+now: Azim Premji University, India
 ---

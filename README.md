@@ -4,7 +4,7 @@ The website of the Mackinder Lab, Department of Biology, University of York.
 It is a [Jekyll](https://jekyllrb.com) site hosted on GitHub Pages.
 
 - **Editors:** see [EDITING.md](EDITING.md). All day-to-day editing happens in [Pages CMS](https://app.pagescms.org).
-- **Content:** news in `_posts/`, people in `_people/`, publications in `_data/publications.yml`, other pages in `pages/`, menu in `_data/navigation.yml`, home page text in `_data/home.yml`.
+- **Content:** news in `_posts/`, people in `_people/`, publications in `_data/publications.yml`, other pages in `pages/`, menu in `_data/navigation.yml`, home page text and banner in `_data/home.yml`, upcoming events in `_data/events.yml`.
 - **Templates:** `_layouts/`, `_includes/`, `assets/css/style.css`.
 - **Editor setup:** `.pages.yml` defines the Pages CMS forms.
 
@@ -24,9 +24,8 @@ bundle exec jekyll serve
 
 Then open <http://localhost:4000>.
 
-## One-off migration from Weebly
+## Migration from Weebly
 
-`scripts/download_assets.py` copies images and downloads from the old
-mackinderlab.weebly.com site. Run it on a network where the old site loads.
-People photos and three research images have to be saved by hand; the script
-lists where they go.
+Images and files were copied from mackinderlab.weebly.com with
+`scripts/download_assets.py` (run once in GitHub Actions). The original page
+HTML is kept on the `weebly-archive` branch for reference.

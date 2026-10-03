@@ -1,6 +1,6 @@
 ---
-name: "Abi Perrin"
+name: Abi Perrin
 group: alumni
 order: 111
-now: "Science communication"
+photo: /assets/images/people/abi-perrin.png
 ---

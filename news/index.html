@@ -1,9 +1,20 @@
 ---
 title: News
+wide: true
 permalink: /news/
 ---
 {% assign by_year = site.posts | group_by_exp: "p", "p.date | date: '%Y'" %}
 {% for y in by_year %}
-  <h2 class="news-year">{{ y.name }}</h2>
-  <div class="cards">{% for post in y.items %}{% include news-card.html post=post %}{% endfor %}</div>
+  <h2 class="year">{{ y.name }}</h2>
+  <ul class="news-full">
+    {% for post in y.items %}
+    <li>
+      <a class="thumb" href="{{ post.url | relative_url }}" tabindex="-1">{% if post.image %}{% include img.html src=post.image alt=post.title %}{% endif %}</a>
+      <div>
+        <a class="title" href="{{ post.url | relative_url }}">{{ post.title }}</a> <span class="date">[{{ post.date | date: "%b %Y" }}]</span>
+        <p>{{ post.content | strip_html | truncatewords: 32 }}</p>
+      </div>
+    </li>
+    {% endfor %}
+  </ul>
 {% endfor %}

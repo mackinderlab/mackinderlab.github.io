@@ -1,6 +1,7 @@
 ---
-name: "Seb Grant"
+name: Seb Grant
 group: alumni
 order: 110
-now: "PhD student, York"
+photo: /assets/images/people/seb-grant.jpg
+now: PhD student at University of York
 ---

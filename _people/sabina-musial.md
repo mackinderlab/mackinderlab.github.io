@@ -1,6 +1,7 @@
 ---
-name: "Sabina Musiał"
+name: Sabina Musiał
 group: alumni
 order: 113
-now: "Postdoc, University of Leeds"
+photo: /assets/images/people/sabina-musial.jpg
+now: Postdoc at University of Leeds
 ---

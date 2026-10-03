@@ -1,11 +1,12 @@
 ---
 title: People
+wide: true
 permalink: /people/
 groups:
   - { key: pi, title: Principal Investigator }
   - { key: postdoc, title: Postdocs and Fellows }
-  - { key: phd, title: PhD Students }
-  - { key: technician, title: Research Technicians }
+  - { key: phd, title: Students }
+  - { key: technician, title: Technicians }
 ---
 {% assign everyone = site.people | sort: "order" %}
 {% for g in page.groups %}
@@ -14,12 +15,18 @@ groups:
   <h2>{{ g.title }}</h2>
   <div class="people-grid">
     {% for person in members %}
+    {% assign words = person.content | strip_html | number_of_words %}
     <div class="person">
       {% include img.html src=person.photo alt=person.name %}
       <div>
         <h3>{{ person.name }}</h3>
         <p class="role">{{ person.role }}</p>
-        <div class="bio">{{ person.content | markdownify }}</div>
+        <div class="bio">
+          {% if words > 60 %}
+          <p>{{ person.content | strip_html | truncatewords: 45 }}</p>
+          <details><summary>Read more</summary>{{ person.content | markdownify }}</details>
+          {% else %}{{ person.content | markdownify }}{% endif %}
+        </div>
       </div>
     </div>
     {% endfor %}
@@ -29,6 +36,12 @@ groups:
 
 {% assign alumni = everyone | where: "group", "alumni" %}
 <h2>Former members</h2>
-<ul class="alumni">
-  {% for person in alumni %}<li>{{ person.name }}{% if person.now and person.now != "" %} <span class="where">({{ person.now }})</span>{% endif %}</li>{% endfor %}
-</ul>
+<div class="alumni-grid">
+  {% for person in alumni %}
+  <div>
+    {% if person.photo %}{% include img.html src=person.photo alt=person.name %}{% endif %}
+    <span class="name">{{ person.name }}</span>
+    {% if person.now and person.now != "" %}<span class="where">Now: {{ person.now }}</span>{% endif %}
+  </div>
+  {% endfor %}
+</div>

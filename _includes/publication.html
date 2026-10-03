@@ -1,6 +1,16 @@
 {%- assign p = include.pub -%}
-<li class="pub">
-  <span class="title">{% if p.doi %}<a href="https://doi.org/{{ p.doi }}">{{ p.title }}</a>{% else %}{{ p.title }}{% endif %}{% if p.preprint %}<span class="badge">Preprint</span>{% endif %}</span>
-  <span class="authors">{{ p.authors }}</span><br>
-  <span class="journal">{{ p.journal }}</span>{% if p.details %} {{ p.details }}{% endif %} ({{ p.year }}){% if p.pdf %} · <a href="{{ p.pdf | relative_url }}">PDF</a>{% endif %}{% if p.note and p.hidden != true %} · {{ p.note | markdownify | remove: '<p>' | remove: '</p>' | strip }}{% endif %}
+<li class="pub{% if p.image %} has-image{% endif %}">
+  {% if p.image %}<div class="pub-thumb">{% if p.doi %}<a href="https://doi.org/{{ p.doi }}" tabindex="-1">{% endif %}{% include img.html src=p.image alt=p.title %}{% if p.doi %}</a>{% endif %}</div>{% endif %}
+  <div class="pub-text">
+    <p>{% include authors.html authors=p.authors %} ({{ p.year }}).
+      {% if p.doi %}<a class="pub-title" href="https://doi.org/{{ p.doi }}">{{ p.title }}</a>{% else %}<span class="pub-title">{{ p.title }}</span>{% endif %}.
+      <em>{{ p.journal }}</em>{% if p.details %} {{ p.details }}{% endif %}.{% if p.preprint %} <span class="badge">Preprint</span>{% endif %}</p>
+    {% if p.pdf or p.links or p.note %}
+    <ul class="pub-links">
+      {% if p.pdf %}<li><a href="{{ p.pdf | relative_url }}">PDF</a></li>{% endif %}
+      {% for l in p.links %}<li><a href="{{ l.url }}">{{ l.label }}</a></li>{% endfor %}
+      {% if p.note %}<li class="pub-note">{{ p.note | markdownify | remove: '<p>' | remove: '</p>' | strip }}</li>{% endif %}
+    </ul>
+    {% endif %}
+  </div>
 </li>

@@ -7,15 +7,19 @@
 #
 - year: 2026
   title: Pyrenoid Structure, Function, Evolution, and Characterization Across Diverse Lineages
-  authors: Barrett J, Nam O, Naduthodi MIS, Mackinder LCM
+  authors: Barrett J#, Nam O#, Naduthodi MIS#, Mackinder LCM
   journal: Annual Review of Plant Biology
   doi: 10.1146/annurev-arplant-070225-034846
+  image: /assets/images/publications/barrett-2026.jpg
+  note: "Authors marked with # contributed equally"
 - year: 2026
   title: Sticker number modulates pyrenoid condensate assembly to support algal fitness
-  authors: Kumar G, Barrett J, Van der Stappen P, Payne-Dwyer A, Nam O, Shepherd J, Frame L, Howard J, Malis V, Degut C, Hodgkinson M, Richter R, Schaefer C, Plevin M, Hondele M, Leake M, Engel B, Mackinder L
+  authors: Kumar G#, Barrett J#, Van der Stappen P#, Payne-Dwyer A, Nam O, Shepherd J, Frame L, Howard J, Malis V, Degut C, Hodgkinson M, Richter R, Schaefer C, Plevin M, Hondele M, Leake M, Engel B, Mackinder L
   journal: bioRxiv 2026.01.27.701992
   doi: 10.64898/2026.01.27.701992
   preprint: true
+  image: /assets/images/publications/kumar-2026.jpg
+  note: "Authors marked with # contributed equally"
 - year: 2025
   title: Conserved and Lineage-Specific Roles of KEA-Mediated Ion Homeostasis in Chlamydomonas
   authors: Wunder T, Eulitz L, Kramer L, Ali ZM, Ostermeier M, Leu C, Szulc B, Holzner LJ, Fechter J, Padovani F, Brandt B, Girr P, Teh JT, Mühlbauer S, Sotos C, Angstenberger M, Mackinder LCM, Schmoller KM, Rädler JO, Nickelsen J, de Vries J, Kunz HH
@@ -28,6 +32,7 @@
   journal: bioRxiv 2025.11.18.689020
   doi: 10.1101/2025.11.18.689020
   preprint: true
+  image: /assets/images/publications/adler-2025.jpg
 - year: 2025
   title: A modular high-throughput approach for advancing synthetic biology in the chloroplast of Chlamydomonas
   authors: Inckemann RM, Chotel T, Burgis M, Brinkmann CK, Andreas L, Baumann J, Sharma P, Klose M, Barrett J, Ries F, Paczia N, Glatter T, Mackinder LCM, Willmund F, Erb TJ
@@ -53,11 +58,13 @@
   authors: Perrin AJ, Dowson M, Davis K, Nam O, Dowle AA, Calder G, Springthorpe VJ, Zhao G, Mackinder LCM
   journal: Science Advances
   doi: 10.1126/sciadv.adp6599
+  image: /assets/images/publications/perrin-2025.png
 - year: 2024
   title: 'From algae to plants: understanding pyrenoid-based CO2-concentrating mechanisms'
   authors: Catherall E, Musiał S, Atkinson N, Walker CE, Mackinder LCM, McCormick AJ
   journal: Trends in Biochemical Sciences
   doi: 10.1016/j.tibs.2024.10.010
+  image: /assets/images/publications/catherall-2024.png
 - year: 2024
   title: Holotomography
   authors: Kim G, Hugonnet H, Kim K, Lee J-H, Lee SS, Ha J, Lee C, Park H, Yoon K-J, Shin Y, Csucs G, Hitchcock I, Mackinder L, Kim JH, Hwang TH, Lee S, O'Toole P, Koo B-K, Guck J, Park Y
@@ -68,11 +75,13 @@
   authors: Barrett J, Naduthodi MIS, Mao Y, Degut C, Musiał S, Salter A, Leake MC, Plevin MJ, McCormick AJ, Blaza JN, Mackinder LCM
   journal: Nature Plants
   doi: 10.1038/s41477-024-01812-x
+  image: /assets/images/publications/barrett-2024.jpg
 - year: 2024
   title: A Protein Blueprint of the Diatom CO2-Fixing Organelle
   authors: Nam O, Musiał S, Demulder M, McKenzie C, Dowle A, Dowson M, Barrett J, Blaza JN, Engel BD, Mackinder LCM
   journal: Cell
   doi: 10.1016/j.cell.2024.09.025
+  image: /assets/images/publications/nam-2024.jpg
 - year: 2024
   title: Tethering ferredoxin-NADP+ reductase to photosystem I promotes photosynthetic cyclic electron transfer
   authors: Emrich-Mills TZ, Proctor MS, Degen GE, Jackson PJ, Richardson K, Hawkings F, Buchert F, Hitchcock A, Hunter N, Mackinder L, Hippler M, Johnson MP
@@ -94,11 +103,13 @@
   authors: Adler L, Lau CS, Shaikh KM, van Maldegem K, Payne-Dwyer AL, Lefoulon C, Girr P, Atkinson N, Barrett J, Emrich-Mills T, Dukic E, Blatt MR, Leake M, Peltier G, Spetea C, Burlacot A, McCormick AJ, Mackinder LCM, Walker CE
   journal: Plant Physiology
   doi: 10.1093/plphys/kiae450
+  image: /assets/images/publications/adler-2024.jpg
 - year: 2024
   title: Predicting Rubisco-Linker Condensation from Titration in the Dilute Phase
-  authors: Payne-Dwyer A, Kumar G, Barrett J, Gherman LK, Hodgkinson M, Plevin M, Mackinder L, Leake MC, Schaefer C
+  authors: Payne-Dwyer A#, Kumar G#, Barrett J#, Gherman LK, Hodgkinson M, Plevin M, Mackinder L, Leake MC, Schaefer C
   journal: Physical Review Letters
   details: 132:218401
+  note: "Authors marked with # contributed equally"
 - year: 2024
   title: Advancing chloroplast synthetic biology through high-throughput plastome engineering of Chlamydomonas reinhardtii
   authors: Inckemann R, Chotel T, Brinkmann CK, Burgis M, Andreas L, Baumann J, Sharma P, Klose M, Barrett J, Ries F, Paczia N, Glatter T, Willmund F, Mackinder LCM, Erb TJ
@@ -144,6 +155,7 @@
   authors: Lau CS, Dowle A, Thomas GH, Girr P, Mackinder LCM
   journal: The Plant Cell
   doi: 10.1093/plcell/koad131
+  image: /assets/images/publications/lau-2023.jpg
 - year: 2023
   title: Rubisco and inorganic carbon assimilation
   authors: Wostrikoff K, Mackinder LCM
@@ -154,15 +166,18 @@
   journal: In The Chlamydomonas Sourcebook (Academic Press) Pages 345-384
 - year: 2022
   title: Endogenous GFP tagging in the diatom Thalassiosira pseudonana
-  authors: Nam O, Grouneva I, Mackinder LCM
+  authors: Nam O#, Grouneva I#, Mackinder LCM
   journal: bioRxiv 2022.09.30.510313
   doi: 10.1101/2022.09.30.510313
   preprint: true
+  image: /assets/images/publications/nam-2022.jpg
+  note: "Authors marked with # contributed equally"
 - year: 2021
   title: 'Pyrenoids: CO2-fixing phase separated liquid organelles'
-  authors: Barrett J, Girr P, Mackinder LCM
+  authors: Barrett J#, Girr P#, Mackinder LCM
   journal: Biochimica et Biophysica Acta (BBA) - Molecular Cell Research
   doi: 10.1016/j.bbamcr.2021.118949
+  note: "Authors marked with # contributed equally"
 - year: 2021
   title: A recombineering pipeline to clone large and complex genes in Chlamydomonas
   authors: Emrich-Mills T, Yates G, Barrett J, Grouneva I, Lau CS, Walker CE, Kwok TK, Davey JW, Johnson MP, Mackinder LCM
@@ -173,6 +188,7 @@
   authors: Meyer MT, Itakura AK, Patena W, Wang L, He S, Emrich-Mills T, Lau CS, Yates G, Mackinder LCM, Jonikas MC
   journal: Science Advances
   details: 6(46):eabd2408
+  image: /assets/images/publications/meyer-2020.png
 - year: 2020
   title: Coexpressed subunits of dual genetic origin define a conserved supercomplex mediating essential protein import into chloroplasts
   authors: Ramundo S, Asakura Y, Salomé PA, Strenkert D, Boone M, Mackinder LCM, Takafuji K, Dinc E, Rahire M, Crèvecoeur M, Magneschi L, Schaad O, Hippler M, Jonikas M, Merchant S, Nakai M, Rochaix JD, Walter P
@@ -183,6 +199,7 @@
   authors: Mukherjee A, Lau CS, Walker CE, Rai A, Prejean CI, Yates G, Emrich-Mills T, Lemoine SG, Vinyard DJ, Mackinder LCM, Moroney JV
   journal: PNAS
   details: 116:16915–20
+  image: /assets/images/publications/mukherjee-2019.png
 - year: 2018
   title: Effects of microcompartmentation on flux distribution and metabolic pools in Chlamydomonas reinhardtii chloroplasts
   authors: Küken A, Sommer F, Yaneva-Roder L, Mackinder LCM, Höhne M, Geimer S, Jonikas MC, Schroda M, Stitt M, Nikoloski Z, Mettler-Altmann T
@@ -193,22 +210,26 @@
   authors: Mackinder LCM, Chen C, Leib R, Patena W, Blum SR, Rodman M, Ramundo S, Adams C, Jonikas MC
   journal: Cell
   details: 171:133-147
+  image: /assets/images/publications/mackinder-2017-cell.png
 - year: 2017
   title: The Eukaryotic CO2-Concentrating Organelle is Liquid-Like and Exhibits Dynamic Reorganization
   authors: Freeman Rosenzweig ES, Xu B, Kuhn Cuellar L, Martinez-Sanchez A, Schaffer M, Strauss M, Cartwright HN, Ronceray P, Plitzko JM, Förster F, Wingreen NS, Engel BD, Mackinder LCM, Jonikas MC
   journal: Cell
   details: 171:148-162
+  image: /assets/images/publications/freeman-rosenzweig-2017.png
 - year: 2017
   title: The Chlamydomonas CO2-concentrating mechanism and its potential for engineering photosynthesis in plants
   authors: Mackinder LCM
   journal: New Phytologist
   doi: 10.1111/nph.14749
   pdf: /assets/files/np_2017_mackinder.pdf
+  image: /assets/images/publications/mackinder-2017-new-phytologist.png
 - year: 2016
   title: A repeat protein links Rubisco to form the eukaryotic carbon concentrating organelle
   authors: Mackinder LCM, Meyer MT, Mettler-Altmann T, Chen V, Mitchell MC, Caspari O, Freeman Rosenzweig ES, Pallesen L, Reeves G, Itakura A, Roth R, Sommer F, Geimer S, Mühlhaus T, Schroda M, Goodenough U, Stitt M, Griffiths H, Jonikas MC
   journal: Proceedings of the National Academy of Sciences
   details: 113:5958-5963
+  image: /assets/images/publications/mackinder-2016.png
 - year: 2015
   title: Critical role of Chlamydomonas reinhardtii ferredoxin-5 in maintaining membrane structure and dark metabolism
   authors: Yang W, Wittkopp TM, Li X, Warakanont J, Dubini A, Catalanotti C, Kim RG, Nowack ECM, Mackinder LCM, Aksoy M, Dudley Page M, D'Adamo S, Saroussi S, Heinnickel M, Johnson X, Richaud P, Alric J, Boehm M, Jonikas MC, Benning C, Merchant S, Posewitz M, Grossman AR
@@ -242,9 +263,10 @@
   note: As member of *Emiliania huxleyi* Annotation Consortium
 - year: 2013
   title: Dissecting the impact of CO2 and pH on the mechanisms of photosynthesis and calcification in the coccolithophore Emiliania huxleyi
-  authors: Bach L, Mackinder L, Schulz K, Wheeler G, Schroeder D, Brownlee C, Riebesell U
+  authors: Bach L*, Mackinder L*, Schulz K, Wheeler G, Schroeder D, Brownlee C, Riebesell U
   journal: New Phytologist
   details: 199:121-134
+  note: "Authors marked with * contributed equally"
 - year: 2011
   title: Expression of biomineralization-related ion transport genes in the coccolithophore Emiliania huxleyi
   authors: Mackinder L, Wheeler G, Schroeder D, von Dassow P, Riebesell U, Brownlee C

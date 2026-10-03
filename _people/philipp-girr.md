@@ -1,6 +1,6 @@
 ---
-name: "Philipp Girr"
+name: Philipp Girr
 group: alumni
 order: 109
-now: ""
+photo: /assets/images/people/philipp-girr.jpg
 ---

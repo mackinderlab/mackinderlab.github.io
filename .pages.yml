@@ -66,6 +66,7 @@ content:
         type: image
         options: { media: images, path: assets/images/people }
       - { name: now, label: Now at (former members only), type: string }
+      - { name: pub_names, label: Other names on papers, type: string, list: true, description: "Only if they publish under a different name, e.g. Lau CS. Used to show lab members in bold." }
       - name: body
         label: Bio
         type: rich-text
@@ -86,6 +87,19 @@ content:
       - { name: year, label: Year, type: number }
       - { name: preprint, label: Preprint, type: boolean }
       - { name: hidden, label: Hide from the site, type: boolean }
+      - name: image
+        label: Thumbnail
+        description: A figure or graphical abstract shown next to the paper.
+        type: image
+        options: { media: images, path: assets/images/publications }
+      - name: links
+        label: Extra links
+        description: e.g. Press release, Poster, Bluesky thread, Code.
+        type: object
+        list: true
+        fields:
+          - { name: label, label: Link text, type: string }
+          - { name: url, label: Web address, type: string }
       - { name: pdf, label: PDF link, type: string }
       - { name: note, label: Note, type: string }
 
@@ -113,12 +127,28 @@ content:
     path: _data/home.yml
     format: yaml
     fields:
+      - { name: tagline, label: Headline, type: string }
       - { name: intro, label: Introduction, type: text }
-      - name: image
-        label: Main image
+      - name: banner
+        label: Banner image
+        description: The wide strip across the top of every page. A wide, colourful image works best.
         type: image
         options: { media: images, path: assets/images }
-      - { name: image_alt, label: Image description, type: string }
+      - { name: banner_alt, label: Banner description, type: string }
+      - { name: news_count, label: News items on home page, type: number }
+
+  - name: events
+    label: Upcoming events
+    type: file
+    path: _data/events.yml
+    format: yaml
+    list: true
+    fields:
+      - { name: date, label: Date, type: date, options: { format: yyyy-MM-dd } }
+      - { name: place, label: Place, type: string, description: "e.g. Basel, CH" }
+      - { name: name, label: Event, type: string }
+      - { name: url, label: Event link, type: string }
+      - { name: who, label: Who is going, type: string }
 
   - name: menu
     label: Menu

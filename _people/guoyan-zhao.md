@@ -1,6 +1,8 @@
 ---
-name: "Guoyan Zhao"
+name: Guoyan Zhao
 group: alumni
 order: 102
-now: "Associate Professor, Shandong Normal University, China"
+photo: /assets/images/people/guoyan-zhao.jpg
+now: Associate Professor, College of Life Science, Shandong Normal University, Jinan,
+  China
 ---

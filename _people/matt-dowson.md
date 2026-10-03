@@ -1,6 +1,7 @@
 ---
-name: "Matt Dowson"
+name: Matt Dowson
 group: alumni
 order: 108
-now: "PhD student, Sheffield"
+photo: /assets/images/people/matt-dowson.jpg
+now: PhD student at University of Sheffield
 ---

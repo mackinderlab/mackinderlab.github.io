@@ -1,11 +1,18 @@
 ---
 title: Publications
+wide: true
 permalink: /publications/
 ---
-<p>Papers are listed newest first. Preprints are marked; when a paper is published, its journal version replaces the preprint.</p>
+<div class="pub-header">
+  <p class="muted">Lab members are shown in bold.</p>
+  <div>
+    <a class="button dark" href="https://scholar.google.com/scholar?q=author%3A%22LCM+Mackinder%22">Google Scholar</a>
+    <a class="button dark" href="https://pubmed.ncbi.nlm.nih.gov/?term=Mackinder+LCM%5BAuthor%5D&sort=date">PubMed</a>
+  </div>
+</div>
 {% assign shown = site.data.publications | where_exp: "p", "p.hidden != true" %}
 {% assign years = shown | group_by: "year" | sort: "name" | reverse %}
 {% for y in years %}
-  <h2 class="pub-year">{{ y.name }}</h2>
+  <h2 class="year">{{ y.name }}</h2>
   <ul class="pubs">{% for pub in y.items %}{% include publication.html pub=pub %}{% endfor %}</ul>
 {% endfor %}

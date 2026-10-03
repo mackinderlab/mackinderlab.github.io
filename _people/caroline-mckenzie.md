@@ -1,6 +1,6 @@
 ---
-name: "Caroline McKenzie"
+name: Caroline McKenzie
 group: alumni
 order: 106
-now: ""
+photo: /assets/images/people/caroline-mckenzie.png
 ---

@@ -24,6 +24,16 @@ updates. If you type any of those yourself, your version is kept. Tick
 *Preprint* for bioRxiv papers. When the journal version comes out, add it and
 tick *Hide from the site* on the preprint.
 
+**Add an upcoming event.** Go to *Upcoming events* and add an item with the
+date, place, event name, a link and who is going. Events disappear from the
+home page by themselves once the date has passed.
+
+**Add a picture or links to a paper.** In *Publications*, upload a figure or
+graphical abstract as the *Thumbnail*, and use *Extra links* for things like a
+press release, poster or Bluesky thread. Lab members' names are shown in bold
+automatically. If someone publishes under a different name (for example
+"Lau CS"), add it under *Other names on papers* on their People entry.
+
 **Add or update a person.** Go to *People*. Pick their *Section* (for example
 Postdocs and Fellows), set *Order on page* (lower numbers come first), upload a
 square photo and write a short bio. When someone leaves, change their section
@@ -38,7 +48,7 @@ line straight after the picture.
 address like `/outreach/`, then add it to the *Menu*.
 
 **Change the menu or home page.** Use *Menu* to rename, reorder or add items,
-and *Home page* to change the introduction and main image.
+and *Home page* to change the headline, introduction, the banner image across the top of every page, and how many news items the home page shows.
 
 ## What needs a technical person
 
