@@ -3,18 +3,21 @@ name: Snapshot the old Weebly pages
 on:
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   snapshot:
     runs-on: ubuntu-latest
     steps:
-      - name: Download page HTML
+      - name: Save page HTML to the weebly-archive branch
         run: |
-          mkdir snapshot
+          mkdir archive && cd archive
+          git init -q -b weebly-archive
           for p in index research people publications joining-the-lab contact news resources-cyanotag plastid-preview-2019 york-physics-of-pyrenoids-project-yp3; do
-            curl -sSL -A "Mozilla/5.0" "https://mackinderlab.weebly.com/$p.html" -o "snapshot/$p.html"
+            curl -sSL -A "Mozilla/5.0" "https://mackinderlab.weebly.com/$p.html" -o "$p.html"
           done
-          ls -la snapshot
-      - uses: actions/upload-artifact@v4
-        with:
-          name: weebly-snapshot
-          path: snapshot
+          git config user.name "github-actions[bot]"
+          git config user.email "41898499+github-actions[bot]@users.noreply.github.com"
+          git add -A && git commit -q -m "Archive of mackinderlab.weebly.com pages"
+          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" weebly-archive
