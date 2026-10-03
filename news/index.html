@@ -1,0 +1,9 @@
+---
+title: News
+permalink: /news/
+---
+{% assign by_year = site.posts | group_by_exp: "p", "p.date | date: '%Y'" %}
+{% for y in by_year %}
+  <h2 class="news-year">{{ y.name }}</h2>
+  <div class="cards">{% for post in y.items %}{% include news-card.html post=post %}{% endfor %}</div>
+{% endfor %}

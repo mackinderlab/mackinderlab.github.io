@@ -1,0 +1,131 @@
+# Pages CMS configuration: defines the editing forms at https://app.pagescms.org
+media:
+  - name: images
+    label: Images
+    input: assets/images
+    output: /assets/images
+    categories: [image]
+    rename: safe
+  - name: files
+    label: Files
+    input: assets/files
+    output: /assets/files
+    categories: [document, spreadsheet, compressed]
+
+content:
+  - name: news
+    label: News
+    type: collection
+    path: _posts
+    filename: "{year}-{month}-{day}-{primary}.md"
+    view:
+      primary: title
+      fields: [title, date]
+      sort: date
+      order: desc
+    fields:
+      - { name: title, label: Title, type: string, required: true }
+      - { name: date, label: Date, type: date, options: { format: yyyy-MM-dd } }
+      - name: image
+        label: Main photo
+        description: Shown at the top of the post and on the news page.
+        type: image
+        options: { media: images, path: assets/images/news }
+      - { name: image_alt, label: Photo description, type: string, description: "A few words describing the photo, for screen readers." }
+      - name: body
+        label: Text
+        type: rich-text
+        options: { format: markdown, media: images, path: assets/images/news }
+
+  - name: people
+    label: People
+    type: collection
+    path: _people
+    filename: "{primary}.md"
+    view:
+      primary: name
+      fields: [name, role, group]
+      sort: order
+    fields:
+      - { name: name, label: Name, type: string, required: true }
+      - { name: role, label: Role, type: string, description: "e.g. Postdoctoral Researcher" }
+      - name: group
+        label: Section
+        type: select
+        options:
+          values:
+            - { name: pi, label: Principal Investigator }
+            - { name: postdoc, label: Postdocs and Fellows }
+            - { name: phd, label: PhD Students }
+            - { name: technician, label: Research Technicians }
+            - { name: alumni, label: Former members }
+      - { name: order, label: Order on page, type: number, description: "Lower numbers appear first." }
+      - name: photo
+        label: Photo
+        description: A square photo works best.
+        type: image
+        options: { media: images, path: assets/images/people }
+      - { name: now, label: Now at (former members only), type: string }
+      - name: body
+        label: Bio
+        type: rich-text
+        options: { format: markdown, media: false }
+
+  - name: publications
+    label: Publications
+    type: file
+    path: _data/publications.yml
+    format: yaml
+    list: true
+    fields:
+      - { name: doi, label: DOI, type: string, description: "e.g. 10.1038/s41477-024-01812-x. If you only fill this in, the other details are added automatically when the site updates." }
+      - { name: title, label: Title, type: string }
+      - { name: authors, label: Authors, type: text }
+      - { name: journal, label: Journal, type: string }
+      - { name: details, label: Volume and pages, type: string }
+      - { name: year, label: Year, type: number }
+      - { name: preprint, label: Preprint, type: boolean }
+      - { name: hidden, label: Hide from the site, type: boolean }
+      - { name: pdf, label: PDF link, type: string }
+      - { name: note, label: Note, type: string }
+
+  - name: pages
+    label: Pages
+    type: collection
+    path: pages
+    filename: "{primary}.md"
+    view:
+      primary: title
+      fields: [title]
+    fields:
+      - { name: title, label: Page title, type: string, required: true }
+      - { name: permalink, label: Web address, type: string, description: "e.g. /outreach/ (new pages only; then add it to the Menu)" }
+      - { name: notice, label: Highlighted notice, type: string, description: "Optional banner at the top (used on Join us)." }
+      - { name: map, label: Show map, type: boolean }
+      - name: body
+        label: Page text
+        type: rich-text
+        options: { format: markdown, media: images, path: assets/images/pages }
+
+  - name: home
+    label: Home page
+    type: file
+    path: _data/home.yml
+    format: yaml
+    fields:
+      - { name: intro, label: Introduction, type: text }
+      - name: image
+        label: Main image
+        type: image
+        options: { media: images, path: assets/images }
+      - { name: image_alt, label: Image description, type: string }
+
+  - name: menu
+    label: Menu
+    type: file
+    path: _data/navigation.yml
+    format: yaml
+    list: true
+    fields:
+      - { name: title, label: Menu label, type: string, required: true }
+      - { name: url, label: Web address, type: string, required: true, description: "e.g. /research/" }

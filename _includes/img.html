@@ -1,0 +1,4 @@
+{%- comment -%} Shows an image if the file exists in the site, otherwise a grey placeholder. Usage: include img.html src=path alt=text {%- endcomment -%}
+{%- assign found = site.static_files | where: "path", include.src | first -%}
+{%- if found -%}<img src="{{ include.src | relative_url }}" alt="{{ include.alt | escape }}" loading="lazy">
+{%- else -%}<img src="{{ '/assets/images/placeholder.svg' | relative_url }}" alt="{{ include.alt | escape }}" loading="lazy">{%- endif -%}

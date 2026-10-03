@@ -1,0 +1,8 @@
+<div class="card">
+  {% if include.post.image %}{% include img.html src=include.post.image alt=include.post.title %}{% endif %}
+  <div class="card-body">
+    <p class="meta">{{ include.post.date | date: "%-d %B %Y" }}</p>
+    <h3><a href="{{ include.post.url | relative_url }}">{{ include.post.title }}</a></h3>
+    <p>{{ include.post.content | strip_html | truncatewords: 25 }}</p>
+  </div>
+</div>

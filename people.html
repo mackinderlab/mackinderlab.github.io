@@ -1,0 +1,34 @@
+---
+title: People
+permalink: /people/
+groups:
+  - { key: pi, title: Principal Investigator }
+  - { key: postdoc, title: Postdocs and Fellows }
+  - { key: phd, title: PhD Students }
+  - { key: technician, title: Research Technicians }
+---
+{% assign everyone = site.people | sort: "order" %}
+{% for g in page.groups %}
+  {% assign members = everyone | where: "group", g.key %}
+  {% if members.size > 0 %}
+  <h2>{{ g.title }}</h2>
+  <div class="people-grid">
+    {% for person in members %}
+    <div class="person">
+      {% include img.html src=person.photo alt=person.name %}
+      <div>
+        <h3>{{ person.name }}</h3>
+        <p class="role">{{ person.role }}</p>
+        <div class="bio">{{ person.content | markdownify }}</div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+{% endfor %}
+
+{% assign alumni = everyone | where: "group", "alumni" %}
+<h2>Former members</h2>
+<ul class="alumni">
+  {% for person in alumni %}<li>{{ person.name }}{% if person.now and person.now != "" %} <span class="where">({{ person.now }})</span>{% endif %}</li>{% endfor %}
+</ul>

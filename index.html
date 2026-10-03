@@ -1,0 +1,27 @@
+---
+layout: default
+title: Home
+---
+<section class="hero">
+  <div>
+    <h1>Mackinder Lab</h1>
+    <p class="lead">{{ site.data.home.intro }}</p>
+    <p class="meta">Department of Biology, University of York</p>
+    <a class="button" href="{{ '/research/' | relative_url }}">Our research</a>
+    <a class="button secondary" href="{{ '/join/' | relative_url }}">Join us</a>
+  </div>
+  <div>{% include img.html src=site.data.home.image alt=site.data.home.image_alt %}</div>
+</section>
+
+<h2>Latest news</h2>
+<div class="cards">
+  {% for post in site.posts limit:3 %}{% include news-card.html post=post %}{% endfor %}
+</div>
+<p><a href="{{ '/news/' | relative_url }}">All news →</a></p>
+
+<h2>Recent publications</h2>
+<ul class="pubs">
+  {% assign recent = site.data.publications | where_exp: "p", "p.hidden != true" %}
+  {% for pub in recent limit:4 %}{% include publication.html pub=pub %}{% endfor %}
+</ul>
+<p><a href="{{ '/publications/' | relative_url }}">All publications →</a></p>

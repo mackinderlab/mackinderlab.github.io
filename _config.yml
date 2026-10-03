@@ -1,0 +1,25 @@
+title: Mackinder Lab
+description: >-
+  Systems and synthetic biology of algal carbon fixation, at the University of York.
+url: "" # set to the custom domain once registered, e.g. https://www.mackinderlab.org
+baseurl: ""
+email: luke.mackinder@york.ac.uk
+
+collections:
+  people:
+    output: false
+
+defaults:
+  - scope: { path: "", type: posts }
+    values: { layout: post, permalink: /news/:year/:title/ }
+  - scope: { path: "" }
+    values: { layout: page }
+
+exclude:
+  - README.md
+  - EDITING.md
+  - Gemfile
+  - Gemfile.lock
+  - scripts/
+  - vendor/
+  - .pages.yml

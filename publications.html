@@ -1,0 +1,11 @@
+---
+title: Publications
+permalink: /publications/
+---
+<p>Papers are listed newest first. Preprints are marked; when a paper is published, its journal version replaces the preprint.</p>
+{% assign shown = site.data.publications | where_exp: "p", "p.hidden != true" %}
+{% assign years = shown | group_by: "year" | sort: "name" | reverse %}
+{% for y in years %}
+  <h2 class="pub-year">{{ y.name }}</h2>
+  <ul class="pubs">{% for pub in y.items %}{% include publication.html pub=pub %}{% endfor %}</ul>
+{% endfor %}

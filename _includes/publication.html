@@ -1,0 +1,6 @@
+{%- assign p = include.pub -%}
+<li class="pub">
+  <span class="title">{% if p.doi %}<a href="https://doi.org/{{ p.doi }}">{{ p.title }}</a>{% else %}{{ p.title }}{% endif %}{% if p.preprint %}<span class="badge">Preprint</span>{% endif %}</span>
+  <span class="authors">{{ p.authors }}</span><br>
+  <span class="journal">{{ p.journal }}</span>{% if p.details %} {{ p.details }}{% endif %} ({{ p.year }}){% if p.pdf %} · <a href="{{ p.pdf | relative_url }}">PDF</a>{% endif %}{% if p.note and p.hidden != true %} · {{ p.note | markdownify | remove: '<p>' | remove: '</p>' | strip }}{% endif %}
+</li>
