@@ -136,6 +136,7 @@ content:
         options: { media: images, path: assets/images }
       - { name: banner_alt, label: Banner description, type: string }
       - { name: news_count, label: News items on home page, type: number }
+      - { name: bluesky, label: Bluesky handle, type: string, description: "e.g. mackinderlab.bsky.social. Shows the latest posts on the home page. Leave empty to hide." }
 
   - name: events
     label: Upcoming events

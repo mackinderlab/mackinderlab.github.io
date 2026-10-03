@@ -1,5 +1,6 @@
-<div class="banner{% if page.url == '/' %} banner-home{% endif %}" role="img" aria-label="{{ site.data.home.banner_alt | escape }}"
-  style="background-image:url('{{ site.data.home.banner | relative_url }}')"></div>
+<div class="hero{% if page.url == '/' %} hero-home{% endif %}">
+  <img class="hero-img" src="{{ site.data.home.banner | relative_url }}" alt="{{ site.data.home.banner_alt | escape }}" fetchpriority="high">
+</div>
 <header class="site-header">
   <div class="container header-inner">
     <a class="site-title" href="{{ '/' | relative_url }}">Mackinder Lab<span class="site-sub">University of York</span></a>

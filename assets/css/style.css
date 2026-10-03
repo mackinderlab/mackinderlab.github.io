@@ -43,10 +43,11 @@ h3 { font-size: 1.15rem; font-weight: 600; }
 .container { max-width: var(--max); margin: 0 auto; padding: 0 16px; }
 main.container { padding-top: 2.5rem; padding-bottom: 4rem; min-height: 60vh; }
 
-/* Banner strip */
-.banner { height: 56px; background-size: cover; background-position: center 40%; background-color: #3b6b4a; }
-.banner-home { height: 150px; }
-@media (min-width: 1000px) { .banner-home { height: 200px; } }
+/* Banner with parallax (see default layout) */
+.hero { position: relative; overflow: hidden; height: 140px; background: #3b6b4a; }
+.hero-home { height: min(58vh, 540px); }
+.hero-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 45%; transform: scale(1.08); will-change: transform; }
+@media (max-width: 640px) { .hero { height: 90px; } .hero-home { height: 42vh; } }
 
 /* Header */
 .site-header { border-bottom: 1px solid var(--border); background: var(--bg); }
@@ -114,18 +115,30 @@ th, td { text-align: left; padding: 0.5rem; border-bottom: 1px solid var(--borde
 .map { width: 100%; height: 320px; border: 0; border-radius: var(--radius); margin-top: 1rem; }
 
 /* People */
-.people-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 2rem 2.5rem; }
-.person { display: grid; grid-template-columns: 120px 1fr; gap: 1.1rem; align-items: start; }
-.person img { width: 120px; height: 120px; object-fit: cover; border-radius: 50%; background: var(--border); }
-.person h3 { margin: 0.2rem 0 0; }
-.person .role { color: var(--accent); font-weight: 600; font-size: 0.9rem; margin: 0.1rem 0 0.5rem; }
-.person .bio { font-size: 0.93rem; color: var(--muted); }
-.person .bio p { margin: 0 0 0.5rem; }
-.person details summary { cursor: pointer; color: var(--text); font-size: 0.9rem; }
-.alumni-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 1.5rem 1rem; text-align: center; }
-.alumni-grid img { width: 96px; height: 96px; object-fit: cover; border-radius: 50%; background: var(--border); }
-.alumni-grid .name { font-weight: 600; display: block; margin-top: 0.4rem; }
-.alumni-grid .where { color: var(--muted); font-size: 0.85rem; line-height: 1.35; display: block; }
+.people-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 2rem 1.75rem; }
+.person { display: flex; flex-direction: column; }
+.person img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 4px; background: var(--border); display: block; }
+.person h3 { margin: 0.75rem 0 0; font-size: 1.08rem; }
+.person .role { color: var(--accent); font-weight: 600; font-size: 0.88rem; margin: 0.1rem 0 0.4rem; }
+.person .teaser { font-size: 0.9rem; color: var(--muted); margin: 0; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.person .more { background: none; border: 0; padding: 0; margin-top: 0.4rem; color: var(--text); font: inherit; font-size: 0.88rem; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; align-self: flex-start; }
+.person .photo { background: none; border: 0; padding: 0; cursor: pointer; width: 100%; display: block; }
+.bio-dialog { max-width: 720px; width: calc(100% - 32px); border: 0; border-radius: 8px; padding: 0; background: var(--bg); color: var(--text); box-shadow: 0 20px 60px rgba(0,0,0,0.3); }
+.bio-dialog::backdrop { background: rgba(0,0,0,0.5); }
+.bio-dialog .inner { display: grid; grid-template-columns: 200px 1fr; gap: 1.5rem; padding: 1.75rem; }
+.bio-dialog img { width: 200px; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 4px; }
+.bio-dialog h3 { margin: 0; font-size: 1.4rem; }
+.bio-dialog .bio { font-size: 0.95rem; }
+.bio-dialog .close { position: absolute; top: 0.6rem; right: 0.8rem; background: none; border: 0; font-size: 1.6rem; line-height: 1; color: var(--muted); cursor: pointer; }
+@media (max-width: 600px) { .bio-dialog .inner { grid-template-columns: 1fr; } .bio-dialog img { width: 140px; } }
+.alumni-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 1.5rem 1rem; }
+.alumni-grid img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 4px; background: var(--border); }
+.alumni-grid .name { font-weight: 600; display: block; margin-top: 0.4rem; font-size: 0.95rem; }
+.alumni-grid .where { color: var(--muted); font-size: 0.82rem; line-height: 1.35; display: block; }
+
+/* Bluesky feed */
+.bsky { margin-top: 2rem; }
+.bsky h2 { margin-bottom: 0.5rem; }
 
 /* Publications */
 .pub-header { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }

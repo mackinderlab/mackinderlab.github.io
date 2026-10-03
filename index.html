@@ -56,5 +56,12 @@ title: Home
       <p>We are always interested in hearing from talented people who share a passion for our research.</p>
       <a class="button" href="{{ '/join/' | relative_url }}">Opportunities</a>
     </div>
+    {%- if site.data.home.bluesky %}
+    <section class="bsky">
+      <h2>On Bluesky</h2>
+      <script type="module" src="https://cdn.jsdelivr.net/npm/bsky-embed@0.3.0/dist/bsky-embed.es.js" async></script>
+      <bsky-embed username="{{ site.data.home.bluesky | remove: '@' }}" limit="5" link-target="_blank" load-more="true"></bsky-embed>
+    </section>
+    {%- endif %}
   </aside>
 </div>

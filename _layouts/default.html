@@ -7,5 +7,20 @@
     {{ content }}
   </main>
   {% include footer.html %}
+  <script>
+    // Banner parallax: the image drifts more slowly than the page as you scroll.
+    (function () {
+      var img = document.querySelector('.hero-img');
+      if (!img || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      var hero = img.parentElement, ticking = false;
+      function update() {
+        var y = window.scrollY;
+        if (y <= hero.offsetHeight) img.style.transform = 'translate3d(0,' + (y * 0.45) + 'px,0) scale(1.08)';
+        ticking = false;
+      }
+      window.addEventListener('scroll', function () { if (!ticking) { requestAnimationFrame(update); ticking = true; } }, { passive: true });
+      update();
+    })();
+  </script>
 </body>
 </html>
