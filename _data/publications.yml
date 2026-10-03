@@ -27,7 +27,7 @@
   doi: 10.64898/2025.12.03.692059
   preprint: true
 - year: 2025
-  title: LCI9 is required for normal pyrenoid starch sheath formation and efficiency of the CO2-concentrating mechanism in Chlamydomonas reinhardtii
+  title: LCI9 is required for normal pyrenoid starch sheath formation and efficiency of the CO₂-concentrating mechanism in Chlamydomonas reinhardtii
   authors: Adler L, Lau J, Esch L, Dao O, Barrett J, Grant S, Yates G, McCormick AJ, Mackinder LCM
   journal: bioRxiv 2025.11.18.689020
   doi: 10.1101/2025.11.18.689020
@@ -39,7 +39,7 @@
   journal: Nature Plants
   doi: 10.1038/s41477-025-02126-2
 - year: 2025
-  title: The green algae CO2 concentrating mechanism and photorespiration jointly operate during acclimation to low CO2
+  title: The green algae CO₂ concentrating mechanism and photorespiration jointly operate during acclimation to low CO₂
   authors: Dao O, Bertrand M, Alseekh S, Veillet F, Auroy P, Nguyen PC, Légeret B, Epting V, Morin A, Cuiné S, Monteil CL, Mackinder LCM, Burlacot A, Krieger-Liszkay A, Weber APM, Fernie AR, Peltier G, Li-Beisson Y
   journal: Nature Communications
   doi: 10.1038/s41467-025-60525-7
@@ -60,7 +60,7 @@
   doi: 10.1126/sciadv.adp6599
   image: /assets/images/publications/perrin-2025.png
 - year: 2024
-  title: 'From algae to plants: understanding pyrenoid-based CO2-concentrating mechanisms'
+  title: 'From algae to plants: understanding pyrenoid-based CO₂-concentrating mechanisms'
   authors: Catherall E, Musiał S, Atkinson N, Walker CE, Mackinder LCM, McCormick AJ
   journal: Trends in Biochemical Sciences
   doi: 10.1016/j.tibs.2024.10.010
@@ -77,7 +77,7 @@
   doi: 10.1038/s41477-024-01812-x
   image: /assets/images/publications/barrett-2024.jpg
 - year: 2024
-  title: A Protein Blueprint of the Diatom CO2-Fixing Organelle
+  title: A Protein Blueprint of the Diatom CO₂-Fixing Organelle
   authors: Nam O, Musiał S, Demulder M, McKenzie C, Dowle A, Dowson M, Barrett J, Blaza JN, Engel BD, Mackinder LCM
   journal: Cell
   doi: 10.1016/j.cell.2024.09.025
@@ -91,7 +91,7 @@
   hidden: true
   note: Preprint of a paper listed above; hidden.
 - year: 2024
-  title: Joint operation of the CO2 concentrating mechanism and photorespiration in green algae during acclimation to limiting CO2
+  title: Joint operation of the CO₂ concentrating mechanism and photorespiration in green algae during acclimation to limiting CO₂
   authors: Dao O, Bertrand M, Alseekh S, Veillet F, Auroy P, Nguyen PC, Légeret B, Epting V, Morin A, Cuiné S, Monteil C, Mackinder LCM, Burlacot A, Krieger-Liszkay A, Weber APM, Fernie AR, Peltier G, Li-Beisson Y
   journal: bioRxiv 2024.09.18.613642
   doi: 10.1101/2024.09.18.613642
@@ -135,7 +135,7 @@
   hidden: true
   note: Preprint of a paper listed above; hidden.
 - year: 2023
-  title: A Protein Blueprint of the Diatom CO2-Fixing Organelle
+  title: A Protein Blueprint of the Diatom CO₂-Fixing Organelle
   authors: Nam O, McKenzie C, Dowle A, Dowson M, Barrett J, Mackinder LCM
   journal: bioRxiv 2023.10.26.564148
   doi: 10.1101/2023.10.26.564148
@@ -151,7 +151,7 @@
   hidden: true
   note: Preprint of a paper listed above; hidden.
 - year: 2023
-  title: A phase-separated CO2-fixing pyrenoid proteome determined by TurboID in Chlamydomonas reinhardtii
+  title: A phase-separated CO₂-fixing pyrenoid proteome determined by TurboID in Chlamydomonas reinhardtii
   authors: Lau CS, Dowle A, Thomas GH, Girr P, Mackinder LCM
   journal: The Plant Cell
   doi: 10.1093/plcell/koad131
@@ -173,7 +173,7 @@
   image: /assets/images/publications/nam-2022.jpg
   note: "Authors marked with # contributed equally"
 - year: 2021
-  title: 'Pyrenoids: CO2-fixing phase separated liquid organelles'
+  title: 'Pyrenoids: CO₂-fixing phase separated liquid organelles'
   authors: Barrett J#, Girr P#, Mackinder LCM
   journal: Biochimica et Biophysica Acta (BBA) - Molecular Cell Research
   doi: 10.1016/j.bbamcr.2021.118949
@@ -184,7 +184,7 @@
   journal: The Plant Cell
   details: 33:1161-1181
 - year: 2020
-  title: Assembly of the Algal CO2-Fixing Organelle, the Pyrenoid, Is Guided by a Rubisco-Binding Motif
+  title: Assembly of the Algal CO₂-Fixing Organelle, the Pyrenoid, Is Guided by a Rubisco-Binding Motif
   authors: Meyer MT, Itakura AK, Patena W, Wang L, He S, Emrich-Mills T, Lau CS, Yates G, Mackinder LCM, Jonikas MC
   journal: Science Advances
   details: 6(46):eabd2408
@@ -195,7 +195,7 @@
   journal: PNAS
   details: 117:32739–32749
 - year: 2019
-  title: Thylakoid localized bestrophin-like proteins are essential for the CO2 concentrating mechanism of Chlamydomonas reinhardtii
+  title: Thylakoid localized bestrophin-like proteins are essential for the CO₂ concentrating mechanism of Chlamydomonas reinhardtii
   authors: Mukherjee A, Lau CS, Walker CE, Rai A, Prejean CI, Yates G, Emrich-Mills T, Lemoine SG, Vinyard DJ, Mackinder LCM, Moroney JV
   journal: PNAS
   details: 116:16915–20
@@ -206,19 +206,19 @@
   journal: eLife
   details: 7:e37960
 - year: 2017
-  title: A spatial interactome reveals the protein organization of the algal CO2 concentrating mechanism
+  title: A spatial interactome reveals the protein organization of the algal CO₂ concentrating mechanism
   authors: Mackinder LCM, Chen C, Leib R, Patena W, Blum SR, Rodman M, Ramundo S, Adams C, Jonikas MC
   journal: Cell
   details: 171:133-147
   image: /assets/images/publications/mackinder-2017-cell.png
 - year: 2017
-  title: The Eukaryotic CO2-Concentrating Organelle is Liquid-Like and Exhibits Dynamic Reorganization
+  title: The Eukaryotic CO₂-Concentrating Organelle is Liquid-Like and Exhibits Dynamic Reorganization
   authors: Freeman Rosenzweig ES, Xu B, Kuhn Cuellar L, Martinez-Sanchez A, Schaffer M, Strauss M, Cartwright HN, Ronceray P, Plitzko JM, Förster F, Wingreen NS, Engel BD, Mackinder LCM, Jonikas MC
   journal: Cell
   details: 171:148-162
   image: /assets/images/publications/freeman-rosenzweig-2017.png
 - year: 2017
-  title: The Chlamydomonas CO2-concentrating mechanism and its potential for engineering photosynthesis in plants
+  title: The Chlamydomonas CO₂-concentrating mechanism and its potential for engineering photosynthesis in plants
   authors: Mackinder LCM
   journal: New Phytologist
   doi: 10.1111/nph.14749
@@ -262,7 +262,7 @@
   details: 499:209-213
   note: As member of *Emiliania huxleyi* Annotation Consortium
 - year: 2013
-  title: Dissecting the impact of CO2 and pH on the mechanisms of photosynthesis and calcification in the coccolithophore Emiliania huxleyi
+  title: Dissecting the impact of CO₂ and pH on the mechanisms of photosynthesis and calcification in the coccolithophore Emiliania huxleyi
   authors: Bach L*, Mackinder L*, Schulz K, Wheeler G, Schroeder D, Brownlee C, Riebesell U
   journal: New Phytologist
   details: 199:121-134

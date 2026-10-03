@@ -3,7 +3,7 @@
   {% if p.image %}<div class="pub-thumb">{% if p.doi %}<a href="https://doi.org/{{ p.doi }}" tabindex="-1">{% endif %}{% include img.html src=p.image alt=p.title %}{% if p.doi %}</a>{% endif %}</div>{% endif %}
   <div class="pub-text">
     <p>{% include authors.html authors=p.authors %} ({{ p.year }}).
-      {% if p.doi %}<a class="pub-title" href="https://doi.org/{{ p.doi }}">{{ p.title }}</a>{% else %}<span class="pub-title">{{ p.title }}</span>{% endif %}.
+      {% if p.doi %}<a class="pub-title" href="https://doi.org/{{ p.doi }}">{{ p.title | replace: "CO2", "CO₂" }}</a>{% else %}<span class="pub-title">{{ p.title | replace: "CO2", "CO₂" }}</span>{% endif %}.
       <em>{{ p.journal }}</em>{% if p.details %} {{ p.details }}{% endif %}.{% if p.preprint %} <span class="badge">Preprint</span>{% endif %}</p>
     {% if p.pdf or p.links or p.note %}
     <ul class="pub-links">
