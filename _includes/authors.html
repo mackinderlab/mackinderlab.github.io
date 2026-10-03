@@ -1,11 +1,22 @@
 {%- comment -%} Prints an author list with current and former lab members in bold. {%- endcomment -%}
 {%- capture labkeys -%}|{%- for person in site.people -%}{%- assign parts = person.name | split: " " -%}{{ parts | last }} {{ parts | first | slice: 0 }}|{%- for n in person.pub_names -%}{%- assign np = n | split: " " -%}{{ np | pop | join: " " }} {{ np | last | slice: 0 }}|{%- endfor -%}{%- endfor -%}{%- endcapture -%}
-{%- assign authors = include.authors | split: ", " -%}
-{%- for a in authors -%}
-  {%- assign clean = a | remove: "#" | remove: "*" | strip -%}
+{%- comment -%} Names can be "Surname Initials" (Barrett J) or full names (James Barrett).
+  "View ORCID Profile" text pasted from bioRxiv is removed. {%- endcomment -%}
+{%- assign authors = include.authors | replace: "View ORCID Profile", "" | split: "," -%}
+{%- for raw in authors -%}
+  {%- assign a = raw | strip -%}
+  {%- if a == "" -%}{%- continue -%}{%- endif -%}
+  {%- assign clean = a | remove: "#" | remove: "*" | remove: "†" | strip -%}
   {%- assign words = clean | split: " " -%}
-  {%- assign initials = words | last -%}
-  {%- assign surname = words | pop | join: " " -%}
-  {%- capture key -%}|{{ surname }} {{ initials | slice: 0 }}|{%- endcapture -%}
+  {%- assign last = words | last -%}
+  {%- assign last_up = last | upcase -%}
+  {%- if words.size > 1 and last == last_up -%}
+    {%- assign surname = words | pop | join: " " -%}
+    {%- assign initial = last | slice: 0 -%}
+  {%- else -%}
+    {%- assign surname = last -%}
+    {%- assign initial = words | first | slice: 0 -%}
+  {%- endif -%}
+  {%- capture key -%}|{{ surname }} {{ initial }}|{%- endcapture -%}
   {%- if labkeys contains key -%}<strong>{{ a }}</strong>{%- else -%}{{ a }}{%- endif -%}{%- unless forloop.last -%}, {% endunless -%}
 {%- endfor -%}

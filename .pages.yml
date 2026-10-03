@@ -83,13 +83,13 @@ content:
     format: yaml
     list: true
     fields:
-      - { name: doi, label: DOI, type: string, description: "e.g. 10.1038/s41477-024-01812-x. If you only fill this in, the other details are added automatically when the site updates." }
+      - { name: doi, label: DOI, type: string, description: "e.g. 10.1038/s41477-024-01812-x (a full https://doi.org/ link also works). If you only fill this in, the title, authors, journal and year are added automatically when the site updates." }
       - { name: title, label: Title, type: string }
-      - { name: authors, label: Authors, type: text }
+      - { name: authors, label: Authors, type: text, description: "Separate names with commas, e.g. Barrett J, Mackinder LCM or James Barrett, Luke Mackinder. Lab members (anyone on the People page) are put in bold automatically. Mark equal contributions with # after the name." }
       - { name: journal, label: Journal, type: string }
       - { name: details, label: Volume and pages, type: string }
       - { name: year, label: Year, type: number }
-      - { name: preprint, label: Preprint, type: boolean }
+      - { name: preprint, label: Preprint, type: boolean, description: "Tick for bioRxiv papers. When the journal version comes out, add it and tick Hide on the preprint." }
       - { name: hidden, label: Hide from the site, type: boolean }
       - name: image
         label: Thumbnail

@@ -30,8 +30,13 @@ home page by themselves once the date has passed.
 
 **Add a picture or links to a paper.** In *Publications*, upload a figure or
 graphical abstract as the *Thumbnail*, and use *Extra links* for things like a
-press release, poster or Bluesky thread. Lab members' names are shown in bold
-automatically. If someone publishes under a different name (for example
+press release, poster or Bluesky thread.
+
+**Bold lab members.** There is no bold button: anyone on the People page
+(current or former) is put in bold automatically. Authors can be written as
+"Barrett J, Mackinder LCM" or as full names, separated by commas, and the
+"View ORCID Profile" text that bioRxiv adds when you copy its author list is
+removed for you. If someone publishes under a different name (for example
 "Lau CS"), add it under *Other names on papers* on their People entry.
 
 **Add or update a person.** Go to *People*. Pick their *Section* (for example

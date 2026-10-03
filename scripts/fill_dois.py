@@ -67,6 +67,9 @@ def main():
     filled = 0
     for entry in entries:
         doi = str(entry.get("doi") or "").strip()
+        for prefix in ("https://doi.org/", "http://doi.org/", "https://dx.doi.org/", "http://dx.doi.org/", "doi:"):
+            if doi.lower().startswith(prefix):
+                doi = doi[len(prefix):]
         if not doi or all(entry.get(f) for f in FIELDS):
             continue
         try:

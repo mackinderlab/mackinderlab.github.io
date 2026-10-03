@@ -28,7 +28,8 @@ title: Home
     {% assign shown = site.data.publications | where_exp: "p", "p.hidden != true" %}
     <ul class="mini-pubs">
       {% for p in shown limit:4 %}
-      <li>{% if p.doi %}<a href="https://doi.org/{{ p.doi }}">{{ p.title | replace: "CO2", "CO₂" }}</a>{% else %}{{ p.title | replace: "CO2", "CO₂" }}{% endif %}
+      {%- assign doi = p.doi | remove: "https://doi.org/" | remove: "http://doi.org/" | remove: "https://dx.doi.org/" | remove: "http://dx.doi.org/" | remove: "doi:" | strip %}
+      <li>{% if doi != "" %}<a href="https://doi.org/{{ doi }}">{{ p.title | replace: "CO2", "CO₂" }}</a>{% else %}{{ p.title | replace: "CO2", "CO₂" }}{% endif %}
         <span class="muted"><em>{% if p.preprint %}bioRxiv{% else %}{{ p.journal }}{% endif %}</em> {{ p.year }}</span></li>
       {% endfor %}
     </ul>
