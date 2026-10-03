@@ -73,14 +73,15 @@
   image: /assets/images/publications/screenshot-2026-10-03-at-154117.png
 - doi: 10.64898/2026.07.17.739135
   title: Molecular organization of the Chlorella sorokiniana pyrenoid
-  authors: Mihris Ibnu Saleem Naduthodi, James Barrett, Jessica Pritchard,
+  authors: "#Mihris Ibnu Saleem Naduthodi, #James Barrett, Jessica Pritchard,
     Philippe Van der Stappen, Manon Demulder, Tommaso Garfagnini, Adam Dowle,
-    Maria Hondele, Benjamin D. Engel, Alistair McCormick, Luke C. M. Mackinder
+    Maria Hondele, Benjamin D. Engel, Alistair McCormick, Luke C. M. Mackinder"
   journal: bioRxiv
   year: 2026
   preprint: true
   hidden: false
   image: /assets/images/publications/f6large.jpg
+  note: "Authors marked with # contributed equally"
 - doi: 10.1146/annurev-arplant-070225-034846
   title: Pyrenoid Structure, Function, Evolution, and Characterization Across
     Diverse Lineages
