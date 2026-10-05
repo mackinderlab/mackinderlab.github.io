@@ -66,6 +66,13 @@ def details_from(msg):
     journal = (msg.get("container-title") or [None])[0]
     if not journal and msg.get("type") == "posted-content":
         journal = msg.get("institution", [{}])[0].get("name") or "Preprint"
+    date = None
+    for key in ("published-online", "published-print", "issued", "posted", "created"):
+        parts = (msg.get(key) or {}).get("date-parts", [[None]])
+        if parts and parts[0] and parts[0][0]:
+            p = list(parts[0]) + [1, 1]
+            date = f"{p[0]:04d}-{int(p[1] or 1):02d}-{int(p[2] or 1):02d}"
+            break
     vol, issue, page = msg.get("volume"), msg.get("issue"), msg.get("page") or msg.get("article-number")
     details = None
     if vol:
@@ -76,7 +83,13 @@ def details_from(msg):
         "authors": format_authors(msg.get("author", [])),
         "journal": journal,
         "year": year,
+        "date": date,
     }
+
+
+def sort_key(entry):
+    """Newest first: by publication date, falling back to the year."""
+    return str(entry.get("date") or f"{entry.get('year') or 0}-00-00")
 
 
 def main():
@@ -84,18 +97,22 @@ def main():
     entries = yaml.safe_load(raw) or []
     filled = 0
     for entry in entries:
+        if entry.get("date"):
+            entry["date"] = str(entry["date"])[:10]
         doi = str(entry.get("doi") or "").strip()
         for prefix in ("https://doi.org/", "http://doi.org/", "https://dx.doi.org/", "http://dx.doi.org/", "doi:"):
             if doi.lower().startswith(prefix):
                 doi = doi[len(prefix):]
-        if not doi or all(entry.get(f) for f in FIELDS):
+        if doi != str(entry.get("doi") or ""):
+            entry["doi"] = doi or None
+        if not doi or (all(entry.get(f) for f in FIELDS) and entry.get("date")):
             continue
         try:
             found = details_from(lookup(doi))
         except Exception as exc:  # network or bad DOI: keep building
             print(f"warning: could not look up {doi}: {exc}", file=sys.stderr)
             continue
-        for field in FIELDS + ("details",):
+        for field in FIELDS + ("details", "date"):
             if not entry.get(field) and found.get(field):
                 entry[field] = found[field]
         if (found.get("journal") or "").lower().startswith(("biorxiv", "cold spring harbor")):
@@ -103,8 +120,13 @@ def main():
         filled += 1
         print(f"filled {doi}: {entry.get('title')}")
 
-    if filled:
-        entries.sort(key=lambda e: -(int(e.get("year") or 0)))
+    # Keep the list newest first, so papers added at the bottom in Pages CMS move to the top.
+    before = [id(e) for e in entries]
+    entries.sort(key=sort_key, reverse=True)
+    resorted = before != [id(e) for e in entries]
+
+    if filled or resorted:
+        entries = [{k: v for k, v in e.items() if v is not None} for e in entries]
         header_lines = []
         for line in raw.splitlines(keepends=True):
             if not line.startswith("#"):
@@ -112,8 +134,7 @@ def main():
             header_lines.append(line)
         header = "".join(header_lines)
         DATA.write_text(header + yaml.safe_dump(entries, allow_unicode=True, sort_keys=False, width=1000), encoding="utf-8")
-    print(f"{filled} publication(s) filled from DOIs")
-
+    print(f"{filled} publication(s) filled from DOIs{', list re-sorted newest first' if resorted else ''}")
 
 if __name__ == "__main__":
     main()

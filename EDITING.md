@@ -18,9 +18,10 @@ of minutes.
 date, upload a main photo, add a few words describing the photo, and write the
 text. The photo always appears at the top of the post and on the news page.
 
-**Add a paper.** Go to *Publications* and add an item. Paste the DOI and save.
-The title, authors, journal and year are filled in automatically when the site
-updates. If you type any of those yourself, your version is kept. Tick
+**Add a paper.** Go to *Publications* and add an item at the bottom. Paste the
+DOI and save; you can add several in one go. Within a few minutes the title,
+authors, journal, year and publication date are filled in, and the list re-sorts
+itself newest first, so there is no need to drag anything to the top. If you type any of those yourself, your version is kept. Tick
 *Preprint* for bioRxiv papers. When the journal version comes out, add it and
 tick *Hide from the site* on the preprint.
 
@@ -39,13 +40,14 @@ press release, poster or Bluesky thread.
 removed for you. If someone publishes under a different name (for example
 "Lau CS"), add it under *Other names on papers* on their People entry.
 
-**Add or update a person.** Go to *People*. Pick their *Section* (for example
-Postdocs and Fellows), set *Order on page* (lower numbers come first), upload a
-square photo and write a short bio. *Email* and *Personal website* are optional
-and appear in the pop-up bio. For students shared with another lab, fill in
-*Co-supervisor* and their web page. With no photo, the card shows the person's
-initials. When someone leaves, change their section to *Former members*, fill in
-*Now at* and clear *Email*.
+**Add or update a person.** Each section of the People page has its own list
+in Pages CMS (*People: Postdocs and Fellows*, *People: PhD Students*, and so on).
+Drag people up and down to set the order they appear on the page. Upload a
+square photo and write a short bio. *Email* and *Personal website* are optional.
+For students shared with another lab, fill in *Co-supervisor* and their web page.
+With no photo, the card shows the person's initials. When someone moves section
+or leaves, add them to the new list (for leavers, *People: Former members*, with
+*Now at*) and delete them from the old one.
 
 **Edit a page** (Research, Join us, Contact, Resources). Go to *Pages* and open
 it. The text box works like a simple word processor: headings, bold, links,

@@ -1,0 +1,31 @@
+- name: Herbie Garland
+  role: PhD Student
+  photo: /assets/images/people/herbie-garland.jpg
+  email: hg1088@york.ac.uk
+  bio: In 2023 I graduated from the University of York with a degree in Biology with a year in industry. During my degree I completed a Generation Research summer studentship with Dr Charlotte Walker and Professor Luke Mackinder investigating inorganic carbon uptake in the model alga *Chlamydomonas reinhardtii*. This was where I first developed my interest in carbon concentrating mechanisms, the pyrenoid, and of membrane-less organelles broadly. After a brief stint as a research technician at the University of Sheffield, I have come back to the Mackinder lab to do a PhD investigating the unique structural proteins surrounding the pyrenoid of the diatom *Thalassiosira pseudonana*. We hope to investigate their function in the carbon concentrating mechanism of this important organism through cryo electron microscopy and in vivo manipulation. Outside the lab I am an avid rock climber.
+- name: Josh Pasanting
+  role: PhD Student
+  photo: /assets/images/people/josh-pasanting.jpg
+  email: snc547@york.ac.uk
+  bio: 'I completed my BSc in Biology at Lancaster University where I was first introduced to plant science research. I was particularly captivated by Rubisco research and its potential to enhance carbon assimilation in crops. I then completed my MSc in Plant Science and Biotechnology at the University of Leeds where I had the opportunity to undertake a project in the West Lab investigating the mechanistic link between genome maintenance and seedling vigour in Arabidopsis to elucidate the genetic determinants of high-quality seeds.
+
+
+    It was during this time that I conducted several independent course projects in Rubisco regulation research where I developed an interest in CCMs and was fascinated by the concept of a phase-separated Rubisco microcompartment as an adaptation to aqueous environments and the prospect of reconstituting CCM structures in plants to improve photosynthesis. I am thrilled to undertake my PhD in the Mackinder lab where I am able to revisit eukaryotic carbon fixation and contribute to further elucidating the protein machinery supporting pyrenoid structure and function. Beyond the lab, I love playing racket sports and baking.'
+- name: Kate Bowler
+  role: PhD Student
+  cosupervisor: Charlotte Walker
+  cosupervisor_url: https://www.york.ac.uk/biology/people/charlotte-walker/
+- name: Lorraine Debéron
+  role: PhD Student
+  photo: /assets/images/people/lorraine-deberon.jpg
+  cosupervisor: Chris McDonald
+  cosupervisor_url: https://yorkyeast.wixsite.com/yorkyeast
+- name: Jack Evans
+  role: PhD Student
+  cosupervisor: Noam Prywes
+  cosupervisor_url: https://pryweslab.org/
+- name: Aidan Salter
+  role: PhD Student
+  photo: /assets/images/people/aidan-salter.jpg
+  cosupervisor: Thierry Tonon
+  cosupervisor_url: https://www.york.ac.uk/biology/people/thierry-tonon/

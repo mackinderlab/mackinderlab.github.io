@@ -37,44 +37,147 @@ content:
         type: rich-text
         options: { format: markdown, media: images, path: assets/images/news }
 
-  - name: people
-    label: People
-    type: collection
-    path: _people
-    filename: "{primary}.md"
-    view:
-      primary: name
-      fields: [name, role, group]
-      sort: order
+  - name: people_pi
+    label: "People: Principal Investigator"
+    description: Drag people to set the order they appear on the page. To move someone to another section, add them there and delete them here.
+    type: file
+    path: _data/people/pi.yml
+    format: yaml
+    list: true
     fields:
       - { name: name, label: Name, type: string, required: true }
       - { name: role, label: Role, type: string, description: "e.g. Postdoctoral Researcher" }
-      - name: group
-        label: Section
-        type: select
-        options:
-          values:
-            - { name: pi, label: Principal Investigator }
-            - { name: postdoc, label: Postdocs and Fellows }
-            - { name: phd, label: PhD Students }
-            - { name: technician, label: Research Technicians }
-            - { name: alumni, label: Former members }
-      - { name: order, label: Order on page, type: number, description: "Lower numbers appear first." }
       - name: photo
         label: Photo
         description: A square photo works best.
         type: image
         options: { media: images, path: assets/images/people }
-      - { name: email, label: Email, type: string, description: "Shown in the full bio. Current members only." }
-      - { name: website, label: Personal website, type: string, description: "Optional link shown in the full bio." }
+      - { name: email, label: Email, type: string, description: "Shown in the full bio." }
+      - { name: website, label: Personal website, type: string, description: "Optional; shown under the role on the card." }
       - { name: cosupervisor, label: Co-supervisor, type: string, description: "For students shared with another lab, e.g. Chris McDonald." }
       - { name: cosupervisor_url, label: Co-supervisor web page, type: string }
-      - { name: now, label: Now at (former members only), type: string }
       - { name: pub_names, label: Other names on papers, type: string, list: true, description: "Only if they publish under a different name, e.g. Lau CS. Used to show lab members in bold." }
-      - name: body
+      - name: bio
         label: Bio
         type: rich-text
         options: { format: markdown, media: false }
+
+  - name: people_postdocs
+    label: "People: Postdocs and Fellows"
+    description: Drag people to set the order they appear on the page. To move someone to another section, add them there and delete them here.
+    type: file
+    path: _data/people/postdocs.yml
+    format: yaml
+    list: true
+    fields:
+      - { name: name, label: Name, type: string, required: true }
+      - { name: role, label: Role, type: string, description: "e.g. Postdoctoral Researcher" }
+      - name: photo
+        label: Photo
+        description: A square photo works best.
+        type: image
+        options: { media: images, path: assets/images/people }
+      - { name: email, label: Email, type: string, description: "Shown in the full bio." }
+      - { name: website, label: Personal website, type: string, description: "Optional; shown under the role on the card." }
+      - { name: cosupervisor, label: Co-supervisor, type: string, description: "For students shared with another lab, e.g. Chris McDonald." }
+      - { name: cosupervisor_url, label: Co-supervisor web page, type: string }
+      - { name: pub_names, label: Other names on papers, type: string, list: true, description: "Only if they publish under a different name, e.g. Lau CS. Used to show lab members in bold." }
+      - name: bio
+        label: Bio
+        type: rich-text
+        options: { format: markdown, media: false }
+
+  - name: people_phd
+    label: "People: PhD Students"
+    description: Drag people to set the order they appear on the page. To move someone to another section, add them there and delete them here.
+    type: file
+    path: _data/people/phd.yml
+    format: yaml
+    list: true
+    fields:
+      - { name: name, label: Name, type: string, required: true }
+      - { name: role, label: Role, type: string, description: "e.g. Postdoctoral Researcher" }
+      - name: photo
+        label: Photo
+        description: A square photo works best.
+        type: image
+        options: { media: images, path: assets/images/people }
+      - { name: email, label: Email, type: string, description: "Shown in the full bio." }
+      - { name: website, label: Personal website, type: string, description: "Optional; shown under the role on the card." }
+      - { name: cosupervisor, label: Co-supervisor, type: string, description: "For students shared with another lab, e.g. Chris McDonald." }
+      - { name: cosupervisor_url, label: Co-supervisor web page, type: string }
+      - { name: pub_names, label: Other names on papers, type: string, list: true, description: "Only if they publish under a different name, e.g. Lau CS. Used to show lab members in bold." }
+      - name: bio
+        label: Bio
+        type: rich-text
+        options: { format: markdown, media: false }
+
+  - name: people_masters
+    label: "People: Masters Students"
+    description: Drag people to set the order they appear on the page. To move someone to another section, add them there and delete them here.
+    type: file
+    path: _data/people/masters.yml
+    format: yaml
+    list: true
+    fields:
+      - { name: name, label: Name, type: string, required: true }
+      - { name: role, label: Role, type: string, description: "e.g. Postdoctoral Researcher" }
+      - name: photo
+        label: Photo
+        description: A square photo works best.
+        type: image
+        options: { media: images, path: assets/images/people }
+      - { name: email, label: Email, type: string, description: "Shown in the full bio." }
+      - { name: website, label: Personal website, type: string, description: "Optional; shown under the role on the card." }
+      - { name: cosupervisor, label: Co-supervisor, type: string, description: "For students shared with another lab, e.g. Chris McDonald." }
+      - { name: cosupervisor_url, label: Co-supervisor web page, type: string }
+      - { name: pub_names, label: Other names on papers, type: string, list: true, description: "Only if they publish under a different name, e.g. Lau CS. Used to show lab members in bold." }
+      - name: bio
+        label: Bio
+        type: rich-text
+        options: { format: markdown, media: false }
+
+  - name: people_technicians
+    label: "People: Technicians"
+    description: Drag people to set the order they appear on the page. To move someone to another section, add them there and delete them here.
+    type: file
+    path: _data/people/technicians.yml
+    format: yaml
+    list: true
+    fields:
+      - { name: name, label: Name, type: string, required: true }
+      - { name: role, label: Role, type: string, description: "e.g. Postdoctoral Researcher" }
+      - name: photo
+        label: Photo
+        description: A square photo works best.
+        type: image
+        options: { media: images, path: assets/images/people }
+      - { name: email, label: Email, type: string, description: "Shown in the full bio." }
+      - { name: website, label: Personal website, type: string, description: "Optional; shown under the role on the card." }
+      - { name: cosupervisor, label: Co-supervisor, type: string, description: "For students shared with another lab, e.g. Chris McDonald." }
+      - { name: cosupervisor_url, label: Co-supervisor web page, type: string }
+      - { name: pub_names, label: Other names on papers, type: string, list: true, description: "Only if they publish under a different name, e.g. Lau CS. Used to show lab members in bold." }
+      - name: bio
+        label: Bio
+        type: rich-text
+        options: { format: markdown, media: false }
+
+  - name: people_alumni
+    label: "People: Former members"
+    description: Drag people to set the order they appear on the page. To move someone to another section, add them there and delete them here.
+    type: file
+    path: _data/people/alumni.yml
+    format: yaml
+    list: true
+    fields:
+      - { name: name, label: Name, type: string, required: true }
+      - { name: now, label: Now at, type: string, description: "e.g. Postdoc at University of Leeds" }
+      - name: photo
+        label: Photo
+        description: A square photo works best.
+        type: image
+        options: { media: images, path: assets/images/people }
+      - { name: pub_names, label: Other names on papers, type: string, list: true, description: "Only if they publish under a different name, e.g. Lau CS. Used to show lab members in bold." }
 
   - name: publications
     label: Publications
@@ -89,6 +192,7 @@ content:
       - { name: journal, label: Journal, type: string }
       - { name: details, label: Volume and pages, type: string }
       - { name: year, label: Year, type: number }
+      - { name: date, label: Publication date, type: date, options: { format: yyyy-MM-dd }, description: "Filled in from the DOI. The list sorts itself newest first by this date, so there is no need to drag new papers to the top." }
       - { name: preprint, label: Preprint, type: boolean, description: "Tick for bioRxiv papers. When the journal version comes out, add it and tick Hide on the preprint." }
       - { name: hidden, label: Hide from the site, type: boolean }
       - name: image

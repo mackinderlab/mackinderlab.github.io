@@ -1,5 +1,5 @@
 {%- comment -%} Prints an author list with current and former lab members in bold. {%- endcomment -%}
-{%- capture labkeys -%}|{%- for person in site.people -%}{%- assign parts = person.name | split: " " -%}{{ parts | last }} {{ parts | first | slice: 0 }}|{%- for n in person.pub_names -%}{%- assign np = n | split: " " -%}{{ np | pop | join: " " }} {{ np | last | slice: 0 }}|{%- endfor -%}{%- endfor -%}{%- endcapture -%}
+{%- capture labkeys -%}|{%- assign everyone = "" | split: "" -%}{%- for section in site.data.people -%}{%- assign everyone = everyone | concat: section[1] -%}{%- endfor -%}{%- for person in everyone -%}{%- assign parts = person.name | split: " " -%}{{ parts | last }} {{ parts | first | slice: 0 }}|{%- for n in person.pub_names -%}{%- assign np = n | split: " " -%}{{ np | pop | join: " " }} {{ np | last | slice: 0 }}|{%- endfor -%}{%- endfor -%}{%- endcapture -%}
 {%- comment -%} Names can be "Surname Initials" (Barrett J) or full names (James Barrett).
   "View ORCID Profile" text pasted from bioRxiv is removed. {%- endcomment -%}
 {%- assign authors = include.authors | replace: "View ORCID Profile", "" | split: "," -%}
