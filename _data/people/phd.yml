@@ -41,11 +41,13 @@
     racket sports and baking.
 - name: Kate Bowler
   role: PhD Student
+  email: kdb515@york.ac.uk
   cosupervisor: Charlotte Walker
   cosupervisor_url: https://www.york.ac.uk/biology/people/charlotte-walker/
 - name: Lorraine Debéron
   role: PhD Student
   photo: /assets/images/people/lorraine-deberon.jpg
+  email: hck535@york.ac.uk
   cosupervisor: Chris McDonald
   cosupervisor_url: https://yorkyeast.wixsite.com/yorkyeast
 - name: Jack Evans
@@ -57,5 +59,6 @@
 - name: Aidan Salter
   role: PhD Student
   photo: /assets/images/people/aidan-salter.jpg
+  email: as2582@york.ac.uk
   cosupervisor: Thierry Tonon
   cosupervisor_url: https://www.york.ac.uk/biology/people/thierry-tonon/
