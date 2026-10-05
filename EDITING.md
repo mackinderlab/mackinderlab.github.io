@@ -18,6 +18,12 @@ of minutes.
 date, upload a main photo, add a few words describing the photo, and write the
 text. The photo always appears at the top of the post and on the news page.
 
+**Add several photos to a news post.** Under *Photos* at the bottom of the post,
+add one item per photo, each with an optional caption. They appear as a grid at
+the end of the post, and clicking one opens it full size with arrows to flick
+through the rest. Drag them to change the order. You can also put a single
+picture in the middle of the text with the picture button in the text box.
+
 **Add a paper.** Go to *Publications* and add an item at the bottom. Paste the
 DOI and save; you can add several in one go. Within a few minutes the title,
 authors, journal, year and publication date are filled in, and the list re-sorts

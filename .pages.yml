@@ -36,6 +36,17 @@ content:
         label: Text
         type: rich-text
         options: { format: markdown, media: images, path: assets/images/news }
+      - name: gallery
+        label: Photos
+        description: Extra photos shown as a grid at the end of the post. Click one on the site to see it full size. Drag to reorder.
+        type: object
+        list: true
+        fields:
+          - name: image
+            label: Photo
+            type: image
+            options: { media: images, path: assets/images/news }
+          - { name: caption, label: Caption, type: string, description: "Optional. Also used as the description for screen readers." }
 
   - name: people_pi
     label: "People: Principal Investigator"
