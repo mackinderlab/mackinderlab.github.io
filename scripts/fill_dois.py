@@ -96,9 +96,18 @@ def main():
     raw = DATA.read_text(encoding="utf-8")
     entries = yaml.safe_load(raw) or []
     filled = 0
+    cleared = 0
     for entry in entries:
         if entry.get("date"):
             entry["date"] = str(entry["date"])[:10]
+            # A date that disagrees with the year was not filled from the DOI (Pages CMS once
+            # stamped the save date on every empty date field). Drop it so the year decides.
+            year = str(entry.get("year") or "")
+            gap = abs(int(entry["date"][:4]) - int(year)) if year.isdigit() and entry["date"][:4].isdigit() else 0
+            if gap > 1 or (gap and not entry.get("doi")):
+                print(f"cleared date {entry['date']} (year {year}): {entry.get('title')}")
+                entry["date"] = None
+                cleared += 1
         doi = str(entry.get("doi") or "").strip()
         for prefix in ("https://doi.org/", "http://doi.org/", "https://dx.doi.org/", "http://dx.doi.org/", "doi:"):
             if doi.lower().startswith(prefix):
@@ -125,7 +134,7 @@ def main():
     entries.sort(key=sort_key, reverse=True)
     resorted = before != [id(e) for e in entries]
 
-    if filled or resorted:
+    if filled or cleared or resorted:
         entries = [{k: v for k, v in e.items() if v is not None} for e in entries]
         header_lines = []
         for line in raw.splitlines(keepends=True):

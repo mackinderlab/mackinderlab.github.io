@@ -203,7 +203,7 @@ content:
       - { name: journal, label: Journal, type: string }
       - { name: details, label: Volume and pages, type: string }
       - { name: year, label: Year, type: number }
-      - { name: date, label: Publication date, type: date, options: { format: yyyy-MM-dd }, description: "Filled in from the DOI. The list sorts itself newest first by this date, so there is no need to drag new papers to the top." }
+      - { name: date, label: Publication date, type: string, description: "Leave empty: it is filled in from the DOI, as YYYY-MM-DD. The list sorts itself newest first by this date (or by year when there is none), so there is no need to drag new papers to the top." }
       - { name: preprint, label: Preprint, type: boolean, description: "Tick for bioRxiv papers. When the journal version comes out, add it and tick Hide on the preprint." }
       - { name: hidden, label: Hide from the site, type: boolean }
       - name: image
