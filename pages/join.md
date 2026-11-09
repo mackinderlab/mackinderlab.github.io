@@ -1,9 +1,10 @@
 ---
 title: Join us
+description: PhD, postdoc and fellowship opportunities in the Mackinder Lab at
+  the University of York, and how to apply.
 permalink: /join/
-description: PhD, postdoc and fellowship opportunities in the Mackinder Lab at the University of York, and how to apply.
+map: false
 ---
-
 Please email [Luke](mailto:luke.mackinder@york.ac.uk) a cover letter describing your research interests, your CV, and contact information for three referees.
 
 ## Opportunities
@@ -19,6 +20,7 @@ Potential funding sources:
 - [Life Sciences Research Foundation](https://lsrf.org/)
 - [Marie Skłodowska-Curie Postdoctoral Fellowships](https://marie-sklodowska-curie-actions.ec.europa.eu/)
 - [DFG Walter Benjamin Programme](https://www.dfg.de/en/research_funding/programmes/individual/walter_benjamin/index.html) (for German nationals or researchers who have completed their doctorate in Germany)
+- [Royal Society Career Development Fellowship](https://royalsociety.org/grants/career-development-fellowship/)
 
 **University of York BSc and MSc research projects.** If you have an exciting idea that fits into the research themes of the lab, please [get in contact](mailto:luke.mackinder@york.ac.uk) to discuss the possibility of writing your own research proposal to do your BSc/MSc project in my lab.
 
